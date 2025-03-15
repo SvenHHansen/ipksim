@@ -1,0 +1,197 @@
+# Webalizer V1.30-04 Incremental Data - 08/26/2000 18:48:10
+2000 8 26 18 48 10
+90 61 5 18 12 3 251687 15 6
+1 8 31 4 26
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+12 12 20244 1 2 1
+1 1 1018 1 0 1
+0 0 0 0 0 0
+58 29 186349 1 9 2
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+11 11 35696 1 2 1
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+8 8 8380 1 2 1
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0
+12 12 20244 2
+1 1 1018 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+11 11 35696 2
+0 0 0 0
+27 21 66567 4
+31 8 119782 5
+0 0 0 0
+8 8 8380 2
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0
+0
+0
+61
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+28
+0
+0
+0
+0
+0
+0
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+# -sites- (monthly)
+62.156.41.193
+0 12 12 20244 1 3868011855
+/javadoc/
+193.159.44.225
+0 1 1 1018 1 0
+-
+129.142.227.121
+0 8 8 8380 1 3890184808
+/javadoc/
+141.75.149.215
+0 58 29 186349 2 3871160920
+/javadoc/
+141.75.149.220
+0 11 11 35696 1 3879130029
+/javadoc/
+# End Of Table - sites (monthly)
+# -sites- (daily)
+129.142.227.121
+0 8 8 8380 1 3890184808
+/javadoc/
+# End Of Table - sites (daily)
+# -urls- 
+/
+0 9 0 5240 5 0
+/javadoc/stylesheet.css
+0 5 0 5076 0 0
+/downloads/IPKSim_Klassendokumentation.zip
+0 1 0 112861 0 0
+/download.html
+0 7 0 5656 0 0
+/javadoc/index-files/index-10.html
+0 1 0 6945 0 0
+/cgi-bin/counter.pl
+0 9 0 9014 0 0
+/counter.html
+0 9 0 2952 0 0
+/inhalt.html
+0 9 0 5216 0 0
+/javadoc/de/ipksim/Prozess.html
+0 1 0 16555 0 0
+/javadoc/de/ipksim/package-summary.html
+0 5 0 32403 0 0
+/home.html
+0 7 0 7336 0 0
+/javadoc/
+0 6 0 3520 0 1
+/javadoc/help-doc.html
+0 1 0 7943 0 0
+/javadoc/index-files/index-15.html
+0 1 0 6945 0 0
+/links.html
+0 3 0 2565 0 0
+/javadoc/index-files/index-1.html
+0 1 0 10461 0 0
+/cgi-bin/*
+2 9 0 9014 0 0
+/referenz.html
+0 9 0 2608 0 0
+/javadoc/allclasses-frame.html
+0 5 0 8083 0 0
+# End Of Table - urls
+# -referrers- 
+- (Direct Request)
+1 18
+http://www.ipksim.de/javadoc/index.html
+0 8
+http://www.ipksim.de/javadoc/index-files/index-15.html
+0 1
+http://www.ipksim.de/counter.html
+0 7
+http://www.ipksim.de/
+0 26
+http://www.ipksim.de/javadoc/help-doc.html
+0 1
+http://www.ipksim.de/download.html
+0 2
+http://www.ipksim.de/javadoc/de/ipksim/package-summary.html
+0 7
+http://www.ipksim.de/javadoc/allclasses-frame.html
+0 3
+http://www.ipksim.de/javadoc/index-files/index-10.html
+0 1
+http://www.ipksim.de/javadoc/index-files/index-1.html
+0 1
+http://www.ipksim.de/inhalt.html
+0 15
+# End Of Table - referrers
+# -agents- 
+MSIE 5.0
+0 69
+UtilMind HTTPGet
+0 8
+Mozilla/4.6
+0 13
+# End Of Table - agents
+# -search strings- 
+# End Of Table - search strings

@@ -1,0 +1,3348 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./Dokumfinal-Dateien/filelist.xml">
+<link rel=Preview href="./Dokumfinal-Dateien/preview.wmf">
+<link rel=Edit-Time-Data href="./Dokumfinal-Dateien/editdata.mso">
+<link rel=OLE-Object-Data href="./Dokumfinal-Dateien/oledata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>First Steps Dokumentation</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Subject>IPKSim Klassenbibliothek</o:Subject>
+  <o:Author>Sven Hansen</o:Author>
+  <o:Keywords>IPKS,Semaphor,Semaphore,Visualisierung</o:Keywords>
+  <o:Template>ipksim</o:Template>
+  <o:LastAuthor>ai5980</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:LastPrinted>2000-10-18T23:24:00Z</o:LastPrinted>
+  <o:Created>2000-10-19T10:18:00Z</o:Created>
+  <o:LastSaved>2000-10-19T10:18:00Z</o:LastSaved>
+  <o:Pages>25</o:Pages>
+  <o:Words>5706</o:Words>
+  <o:Characters>32527</o:Characters>
+  <o:Category>DVAT</o:Category>
+  <o:Manager>Prof. Dr. Uwe Wienkop</o:Manager>
+  <o:Company>Georg Simon Ohm Fachhochschule Nürnberg</o:Company>
+  <o:Lines>271</o:Lines>
+  <o:Paragraphs>65</o:Paragraphs>
+  <o:CharactersWithSpaces>39945</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DoNotShowRevisions/>
+  <w:DoNotPrintRevisions/>
+  <w:HyphenationZone>21</w:HyphenationZone>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:553679495 -2147483648 8 0 66047 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Textkörper;
+	margin-top:11.0pt;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:.75in;
+	text-indent:.75in;
+	mso-line-height-alt:14.0pt;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-text-raise:3.0pt;
+	letter-spacing:-.5pt;
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h2
+	{mso-style-next:Textkörper;
+	margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	mso-line-height-alt:11.0pt;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	background:#E5E5E5;
+	mso-shading:windowtext;
+	mso-pattern:gray-10 auto;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	letter-spacing:-.2pt;
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h3
+	{mso-style-next:Textkörper;
+	margin-top:7.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	mso-line-height-alt:11.0pt;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	letter-spacing:-.2pt;
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h4
+	{mso-style-next:Standard;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.75in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:12.0pt;
+	mso-bidi-font-size:14.0pt;
+	font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{mso-style-update:auto;
+	mso-style-next:Standard;
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:right 453.0pt;
+	font-size:10.0pt;
+	mso-bidi-font-size:24.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	text-transform:uppercase;
+	font-weight:bold;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{mso-style-update:auto;
+	mso-style-next:Standard;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{mso-style-update:auto;
+	mso-style-next:Standard;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:10.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{mso-style-update:auto;
+	mso-style-next:Standard;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:20.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{mso-style-update:auto;
+	mso-style-next:Standard;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:30.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{mso-style-update:auto;
+	mso-style-next:Standard;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:40.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{mso-style-update:auto;
+	mso-style-next:Standard;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:50.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{mso-style-update:auto;
+	mso-style-next:Standard;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:60.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{mso-style-update:auto;
+	mso-style-next:Standard;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:70.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan lines-together;
+	tab-stops:center 3.0in right 6.0in;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	letter-spacing:-.2pt;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan lines-together;
+	tab-stops:center 3.0in right 6.0in;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	letter-spacing:-.2pt;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{mso-style-next:Textkörper;
+	margin-top:3.0pt;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:1.25in;
+	line-height:11.0pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	font-size:9.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+span.MsoPageNumber
+	{mso-style-parent:"";
+	mso-ansi-font-size:9.0pt;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	font-weight:bold;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:14.15pt;
+	margin-bottom:.0001pt;
+	text-indent:-14.15pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoListBullet, li.MsoListBullet, div.MsoListBullet
+	{mso-style-parent:Liste;
+	margin-top:0in;
+	margin-right:.5in;
+	margin-bottom:11.0pt;
+	margin-left:106.8pt;
+	text-indent:-.25in;
+	line-height:11.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l13 level1 lfo18;
+	tab-stops:list 106.8pt;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoListNumber, li.MsoListNumber, div.MsoListNumber
+	{mso-style-parent:Liste;
+	margin-top:0in;
+	margin-right:.5in;
+	margin-bottom:11.0pt;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	line-height:11.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l12 level1 lfo13;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-next:Untertitel;
+	margin-top:33.0pt;
+	margin-right:1.5in;
+	margin-bottom:20.0pt;
+	margin-left:.75in;
+	mso-line-height-alt:27.0pt;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	font-size:30.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	letter-spacing:-2.0pt;
+	mso-font-kerning:14.0pt;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:11.0pt;
+	margin-left:.75in;
+	line-height:11.0pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{mso-style-parent:Titel;
+	mso-style-next:Textkörper;
+	margin-top:0in;
+	margin-right:1.5in;
+	margin-bottom:8.0pt;
+	margin-left:.75in;
+	line-height:20.0pt;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	font-size:17.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	letter-spacing:-.7pt;
+	mso-font-kerning:14.0pt;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	background:navy;
+	font-size:10.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.Blockzitat, li.Blockzitat, div.Blockzitat
+	{mso-style-name:Blockzitat;
+	mso-style-parent:Textkörper;
+	margin-top:0in;
+	margin-right:.5in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	line-height:11.0pt;
+	mso-pagination:widow-orphan lines-together;
+	border:none;
+	mso-border-left-alt:solid gray 4.5pt;
+	mso-border-bottom-alt:solid white 6.0pt;
+	padding:0in;
+	mso-padding-alt:0in 0in 3.0pt 3.0pt;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+span.Einleitung
+	{mso-style-name:Einleitung;
+	mso-style-parent:"";
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	letter-spacing:-.2pt;
+	font-weight:bold;}
+p.UnterberschriftTitelseite, li.UnterberschriftTitelseite, div.UnterberschriftTitelseite
+	{mso-style-name:"Unterüberschrift Titelseite";
+	mso-style-parent:"Überschrift Titelseite";
+	mso-style-next:Textkörper;
+	margin-top:76.0pt;
+	margin-right:84.0pt;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	mso-line-height-alt:12.0pt;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	font-size:20.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	letter-spacing:-1.0pt;
+	mso-font-kerning:14.0pt;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.berschriftTitelseite, li.berschriftTitelseite, div.berschriftTitelseite
+	{mso-style-name:"Überschrift Titelseite";
+	mso-style-next:"Unterüberschrift Titelseite";
+	margin-top:1.25in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	mso-line-height-alt:12.0pt;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	font-size:36.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	letter-spacing:-2.4pt;
+	mso-font-kerning:14.0pt;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Absender, li.Absender, div.Absender
+	{mso-style-name:Absender;
+	margin:0in;
+	margin-bottom:.0001pt;
+	line-height:11.0pt;
+	mso-pagination:widow-orphan lines-together;
+	mso-element:frame;
+	mso-element-frame-width:1.5in;
+	mso-element-frame-height:60.0pt;
+	mso-element-wrap:no-wrap-beside;
+	mso-element-anchor-vertical:page;
+	mso-element-anchor-horizontal:page;
+	mso-element-left:462.05pt;
+	mso-element-top:33.65pt;
+	mso-element-anchor-lock:locked;
+	font-size:8.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.Firmenname, li.Firmenname, div.Firmenname
+	{mso-style-name:Firmenname;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	mso-line-height-alt:11.0pt;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	font-size:30.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	letter-spacing:-1.5pt;
+	mso-font-kerning:14.0pt;}
+p.PersnlicheDaten, li.PersnlicheDaten, div.PersnlicheDaten
+	{mso-style-name:"Persönliche Daten";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:12.25pt;
+	margin-bottom:.0001pt;
+	text-indent:-12.25pt;
+	mso-pagination:widow-orphan;
+	mso-list:l10 level1 lfo15;
+	tab-stops:list .25in;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.Quellcode, li.Quellcode, div.Quellcode
+	{mso-style-name:Quellcode;
+	mso-style-parent:Blockzitat;
+	mso-style-next:Textkörper;
+	margin-top:0in;
+	margin-right:.5in;
+	margin-bottom:3.0pt;
+	margin-left:1.0in;
+	line-height:11.0pt;
+	mso-pagination:widow-orphan lines-together;
+	border:none;
+	mso-border-left-alt:three-d-engrave windowtext 3.75pt;
+	mso-border-bottom-alt:solid white 6.0pt;
+	mso-border-right-alt:three-d-emboss windowtext 3.75pt;
+	padding:0in;
+	mso-padding-alt:0in 4.0pt 3.0pt 3.0pt;
+	font-size:11.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+ins
+	{mso-style-type:export-only;
+	text-decoration:none;}
+span.msoDel
+	{mso-style-type:export-only;
+	mso-style-name:"";
+	text-decoration:line-through;
+	display:none;
+	color:red;}
+ /* Page Definitions */
+@page
+	{mso-facing-pages:yes;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:70.9pt 70.9pt 56.7pt 70.9pt;
+	mso-header-margin:.5in;
+	mso-footer-margin:47.9pt;
+	mso-page-numbers:1;
+	mso-title-page:yes;
+	mso-even-footer:url("./Dokumfinal-Dateien/header.htm") ef1;
+	mso-footer:url("./Dokumfinal-Dateien/header.htm") f1;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+@page Section2
+	{size:595.3pt 841.9pt;
+	margin:70.9pt 70.9pt 56.7pt 70.9pt;
+	mso-header-margin:.5in;
+	mso-footer-margin:47.9pt;
+	mso-page-numbers:1;
+	mso-title-page:yes;
+	mso-even-footer:url("./Dokumfinal-Dateien/header.htm") ef1;
+	mso-footer:url("./Dokumfinal-Dateien/header.htm") f1;
+	mso-paper-source:0;}
+div.Section2
+	{page:Section2;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:-120;
+	mso-list-type:simple;
+	mso-list-template-ids:2114638128;}
+@list l0:level1
+	{mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:-119;
+	mso-list-type:simple;
+	mso-list-template-ids:1077032472;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l2
+	{mso-list-id:-2;
+	mso-list-type:simple;
+	mso-list-template-ids:-356869130;}
+@list l2:level1
+	{mso-level-start-at:0;
+	mso-level-text:*;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:0in;
+	text-indent:0in;}
+@list l3
+	{mso-list-id:42796927;
+	mso-list-type:simple;
+	mso-list-template-ids:1006805204;}
+@list l3:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	mso-level-legacy:yes;
+	mso-level-legacy-indent:.25in;
+	mso-level-legacy-space:0in;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	mso-ansi-font-size:9.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-font-weight:bold;
+	mso-ansi-font-style:normal;}
+@list l4
+	{mso-list-id:92869108;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-274924958;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:1.25in;
+	mso-level-number-position:left;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:344015877;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1525992382;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:88.5pt;
+	mso-level-number-position:left;
+	margin-left:88.5pt;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6
+	{mso-list-id:521095030;
+	mso-list-type:simple;
+	mso-list-template-ids:-2064767776;}
+@list l6:level1
+	{mso-level-start-at:0;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:88.5pt;
+	mso-level-number-position:left;
+	margin-left:88.5pt;
+	text-indent:-.25in;}
+@list l7
+	{mso-list-id:568467099;
+	mso-list-type:simple;
+	mso-list-template-ids:-1915833726;}
+@list l7:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	mso-level-legacy:yes;
+	mso-level-legacy-indent:.25in;
+	mso-level-legacy-space:0in;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	mso-ansi-font-size:9.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-font-weight:bold;
+	mso-ansi-font-style:normal;}
+@list l8
+	{mso-list-id:618221065;
+	mso-list-type:simple;
+	mso-list-template-ids:225350882;}
+@list l8:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	mso-level-legacy:yes;
+	mso-level-legacy-indent:.25in;
+	mso-level-legacy-space:0in;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	mso-ansi-font-size:9.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-font-weight:bold;
+	mso-ansi-font-style:normal;}
+@list l9
+	{mso-list-id:831719902;
+	mso-list-type:simple;
+	mso-list-template-ids:1006805204;}
+@list l9:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	mso-level-legacy:yes;
+	mso-level-legacy-indent:.25in;
+	mso-level-legacy-space:0in;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	mso-ansi-font-size:9.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-font-weight:bold;
+	mso-ansi-font-style:normal;}
+@list l10
+	{mso-list-id:983658425;
+	mso-list-type:simple;
+	mso-list-template-ids:459470092;}
+@list l10:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:"Persönliche Daten";
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:12.25pt;
+	text-indent:-12.25pt;
+	mso-ansi-font-size:11.0pt;
+	font-family:Symbol;
+	mso-text-animation:none;}
+@list l11
+	{mso-list-id:1188103608;
+	mso-list-type:simple;
+	mso-list-template-ids:225350882;}
+@list l11:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	mso-level-legacy:yes;
+	mso-level-legacy-indent:.25in;
+	mso-level-legacy-space:0in;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	mso-ansi-font-size:9.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-font-weight:bold;
+	mso-ansi-font-style:normal;}
+@list l12
+	{mso-list-id:1539121940;
+	mso-list-type:simple;
+	mso-list-template-ids:-249942096;}
+@list l12:level1
+	{mso-level-style-link:Listennummer;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	mso-level-legacy:yes;
+	mso-level-legacy-indent:.25in;
+	mso-level-legacy-space:0in;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	mso-ansi-font-size:9.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-font-weight:bold;
+	mso-ansi-font-style:normal;}
+@list l13
+	{mso-list-id:1576739124;
+	mso-list-type:hybrid;
+	mso-list-template-ids:165982816 850545254 67567619 67567621 67567617 67567619 67567621 67567617 67567619 67567621;}
+@list l13:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:Aufzählungszeichen;
+	mso-level-text:-;
+	mso-level-tab-stop:106.8pt;
+	mso-level-number-position:left;
+	margin-left:106.8pt;
+	text-indent:-.25in;
+	mso-ansi-font-size:8.0pt;}
+@list l14
+	{mso-list-id:1607079163;
+	mso-list-type:simple;
+	mso-list-template-ids:1006805204;}
+@list l14:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	mso-level-legacy:yes;
+	mso-level-legacy-indent:.25in;
+	mso-level-legacy-space:0in;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	mso-ansi-font-size:9.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-font-weight:bold;
+	mso-ansi-font-style:normal;}
+@list l15
+	{mso-list-id:1726101401;
+	mso-list-type:simple;
+	mso-list-template-ids:1006805204;}
+@list l15:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	mso-level-legacy:yes;
+	mso-level-legacy-indent:.25in;
+	mso-level-legacy-space:0in;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	mso-ansi-font-size:9.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-font-weight:bold;
+	mso-ansi-font-style:normal;}
+@list l2:level1 lfo3
+	{mso-level-start-at:1;
+	mso-level-number-format:bullet;
+	mso-level-numbering:continue;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	mso-level-legacy:yes;
+	mso-level-legacy-indent:.25in;
+	mso-level-legacy-space:0in;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	mso-ansi-font-size:11.0pt;
+	font-family:Symbol;}
+@list l2:level1 lfo5
+	{mso-level-start-at:1;
+	mso-level-number-format:bullet;
+	mso-level-numbering:continue;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	mso-level-legacy:yes;
+	mso-level-legacy-indent:.25in;
+	mso-level-legacy-space:0in;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	mso-ansi-font-size:11.0pt;
+	font-family:Symbol;}
+@list l2:level1 lfo8
+	{mso-level-start-at:1;
+	mso-level-number-format:bullet;
+	mso-level-numbering:continue;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	mso-level-legacy:yes;
+	mso-level-legacy-indent:.25in;
+	mso-level-legacy-space:0in;
+	margin-left:1.25in;
+	text-indent:-.25in;
+	mso-ansi-font-size:11.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="3074"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=DE link=blue vlink=purple style='tab-interval:35.4pt'>
+
+<div class=Section1>
+
+<div style='mso-element:frame;mso-element-wrap:no-wrap-beside;mso-element-left:
+220.1pt;mso-element-top:675.25pt'>
+
+<table cellspacing=0 cellpadding=0 hspace=0 vspace=0 width=144 height=80>
+ <tr>
+  <td valign=top align=left height=80 style='padding-top:0in;padding-right:
+  0in;padding-bottom:0in;padding-left:0in'>
+  <p class=Absender align=center style='text-align:center;mso-element:frame;
+  mso-element-wrap:no-wrap-beside;mso-element-left:220.1pt;mso-element-top:
+  675.25pt'><!--[if gte vml 1]><v:rect id="_x0000_s1031" style='position:absolute;
+   left:0;text-align:left;margin-left:2in;margin-top:28.8pt;width:8.4pt;
+   height:78pt;z-index:-14;mso-position-horizontal-relative:page;
+   mso-position-vertical-relative:page' o:allowincell="f" filled="f" stroked="f"
+   strokecolor="white" strokeweight="6pt">
+   <v:textbox inset="0,0,0,0"/>
+   <w:wrap anchorx="page" anchory="page"/>
+   <w:anchorlock/>
+  </v:rect><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+  absolute;z-index:-17;left:0px;margin-left:192px;margin-top:38px;width:14px;
+  height:106px'>
+  <table cellpadding=0 cellspacing=0>
+   <tr>
+    <td width=14 height=106 align=left valign=top style='vertical-align:top'><![endif]><![if !mso]><span
+    style='position:absolute;left:0pt;z-index:-14'>
+    <table cellpadding=0 cellspacing=0 width="100%">
+     <tr>
+      <td><![endif]>
+      <div v:shape="_x0000_s1031" style='padding:0pt 0pt 0pt 0pt' class=shape>
+      <p class=MsoNormal style='line-height:6.5pt;mso-line-height-rule:exactly'><span
+      style='font-size:20.0pt;mso-bidi-font-size:10.0pt'>.<br>
+      .<br>
+      .<br>
+      .<br>
+      .<br>
+      .<br>
+      .<br>
+      .<br>
+      .<o:p></o:p></span></p>
+      <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+      </div>
+      <![if !mso]></td>
+     </tr>
+    </table>
+    </span><![endif]><![if !mso & !vml]>&nbsp;<![endif]><![if !vml]></td>
+   </tr>
+  </table>
+  </span><![endif]><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;
+  font-family:Arial;mso-bidi-font-family:"Times New Roman"'>Norbert Gewald<o:p></o:p></span></p>
+  <p class=Absender align=center style='text-align:center;mso-element:frame;
+  mso-element-wrap:no-wrap-beside;mso-element-left:220.1pt;mso-element-top:
+  675.25pt'><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:
+  Arial;mso-bidi-font-family:"Times New Roman"'>Sven Hansen<o:p></o:p></span></p>
+  <p class=Absender align=center style='text-align:center;mso-element:frame;
+  mso-element-wrap:no-wrap-beside;mso-element-left:220.1pt;mso-element-top:
+  675.25pt'><span style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:
+  Arial;mso-bidi-font-family:"Times New Roman"'>Stephan Lang<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<![if !supportTextWrap]><br clear=ALL>
+<![endif]>
+
+<p class=MsoBodyText><a name=xgraphic><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></a></p>
+
+<p class=MsoBodyText><span style='mso-bookmark:xgraphic'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoBodyText><span style='mso-bookmark:xgraphic'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoBodyText><span style='mso-bookmark:xgraphic'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoBodyText><span style='mso-bookmark:xgraphic'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoBodyText><span style='mso-bookmark:xgraphic'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:100.0pt;mso-bidi-font-size:10.0pt;font-family:
+Arial;mso-bidi-font-family:"Times New Roman";color:lime'>I</span></b></span><span
+style='mso-bookmark:xgraphic'><b style='mso-bidi-font-weight:normal'><span
+style='font-size:100.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;
+mso-bidi-font-family:"Times New Roman";color:red'>P</span></b></span><span
+style='mso-bookmark:xgraphic'><b style='mso-bidi-font-weight:normal'><span
+style='font-size:100.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;
+mso-bidi-font-family:"Times New Roman";color:yellow'>K</span></b></span><span
+style='mso-bookmark:xgraphic'><b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'><span style='font-size:100.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman";color:blue'>S</span></i></b></span><span
+style='mso-bookmark:xgraphic'><b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'><span style='font-size:100.0pt;mso-bidi-font-size:
+10.0pt;font-family:Arial;mso-bidi-font-family:"Times New Roman"'>im</span></i></b></span><span
+style='mso-bookmark:xgraphic'><b style='mso-bidi-font-weight:normal'><span
+style='font-size:100.0pt;mso-bidi-font-size:10.0pt;font-family:Arial;
+mso-bidi-font-family:"Times New Roman"'><o:p></o:p></span></b></span></p>
+
+<p class=UnterberschriftTitelseite><span style='mso-bookmark:xgraphic'>Ein<span
+style="mso-spacerun: yes">  </span>Java-Paket zur Visualisierung von Problemen
+der Interprozeßkommunikation </span></p>
+
+</div>
+
+<span style='font-size:30.0pt;mso-bidi-font-size:10.0pt;font-family:"Times New Roman";
+mso-fareast-font-family:"Times New Roman";letter-spacing:-2.0pt;mso-font-kerning:
+14.0pt;mso-ansi-language:DE;mso-fareast-language:DE;mso-bidi-language:AR-SA'><br
+clear=all style='page-break-before:auto;mso-break-type:section-break'>
+</span>
+
+<div class=Section2><b><span style='font-size:10.0pt;mso-bidi-font-size:24.0pt;
+font-family:Arial;mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:
+"Times New Roman";text-transform:uppercase;mso-ansi-language:DE;mso-fareast-language:
+DE;mso-bidi-language:AR-SA'><br clear=all style='page-break-before:always'>
+</span></b>
+
+<p class=MsoToc1><span style='mso-bookmark:xgraphic'></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><ins cite="mailto:Kostenlose%20Demoversion"
+datetime="2000-09-23T23:47"><span style="mso-spacerun: yes"> </span></ins>TOC<ins
+cite="mailto:Kostenlose%20Demoversion" datetime="2000-09-23T23:47"> \o
+&quot;1-6&quot; \h \z </ins><span style='mso-element:field-separator'></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></p>
+
+<p class=MsoToc1><span style='mso-bookmark:xgraphic'></span><a
+href="#_Toc496552725"><span style='mso-bookmark:xgraphic'>Einführung</span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'>   </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552725 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>3<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700320035000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt;font-family:"Times New Roman";text-transform:none;
+font-weight:normal'><o:p></o:p></span></span></p>
+
+<p class=MsoToc1><span style='mso-bookmark:xgraphic'></span><a
+href="#_Toc496552726"><span style='mso-bookmark:xgraphic'>Das Konzept von
+IPKSim</span><span style='mso-bookmark:xgraphic'><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'>   </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552726 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>4<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700320036000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt;font-family:"Times New Roman";text-transform:none;
+font-weight:normal'><o:p></o:p></span></span></p>
+
+<p class=MsoToc2 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552727"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>Verwendung von IPKSim</span></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'>   </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552727 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>4<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700320037000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt;font-weight:normal'><o:p></o:p></span></span></p>
+
+<p class=MsoToc2 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552728"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>Das Klassenmodell von IPKSim</span></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'>   </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552728 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>4<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700320038000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt;font-weight:normal'><o:p></o:p></span></span></p>
+
+<p class=MsoToc2 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552729"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>Die visuellen Elemente</span></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'>  </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552729 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>4<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700320039000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt;font-weight:normal'><o:p></o:p></span></span></p>
+
+<p class=MsoToc2 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552730"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>Das Framework</span></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'>   </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552730 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>6<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700330030000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt;font-weight:normal'><o:p></o:p></span></span></p>
+
+<p class=MsoToc2 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552731"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>Das dynamische Konzept</span></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'> </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552731 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>6<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700330031000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt;font-weight:normal'><o:p></o:p></span></span></p>
+
+<p class=MsoToc3 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552732"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>Das Anwendungs- Framework</span></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'>  </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552732 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>6<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700330032000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt'><o:p></o:p></span></span></p>
+
+<p class=MsoToc3 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552733"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>Das Zusammenspiel von Anwendung und Prozessen</span></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'>  </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552733 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>6<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700330033000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt'><o:p></o:p></span></span></p>
+
+<p class=MsoToc2 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552734"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>Visualisierungskonzept</span></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'> </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552734 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>7<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700330034000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt;font-weight:normal'><o:p></o:p></span></span></p>
+
+<p class=MsoToc3 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552735"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>Nutzer-Programm-Sicht</span></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'> </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552735 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>7<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700330035000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt'><o:p></o:p></span></span></p>
+
+<p class=MsoToc3 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552736"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>Paket-Programmierer-Sicht</span></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'> </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552736 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>7<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700330036000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt'><o:p></o:p></span></span></p>
+
+<p class=MsoToc1><span style='mso-bookmark:xgraphic'></span><a
+href="#_Toc496552737"><span style='mso-bookmark:xgraphic'>Die Klassen von
+IPKSim</span><span style='mso-bookmark:xgraphic'><span style='color:windowtext;
+display:none;mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'>   </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552737 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>9<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700330037000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt;font-family:"Times New Roman";text-transform:none;
+font-weight:normal'><o:p></o:p></span></span></p>
+
+<p class=MsoToc2 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552738"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>Visualisierungsserver</span></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'>  </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552738 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>9<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700330038000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt;font-weight:normal'><o:p></o:p></span></span></p>
+
+<p class=MsoToc2 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552739"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>Der dynamische Teil</span></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'> </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552739 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>10<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700330039000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt;font-weight:normal'><o:p></o:p></span></span></p>
+
+<p class=MsoToc3 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552740"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>Prozess</span></span><span style='mso-bookmark:
+xgraphic'><span style='color:windowtext;display:none;mso-hide:screen;
+text-decoration:none;text-underline:none'><span style='mso-tab-count:1'>  </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552740 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>10<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700340030000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt'><o:p></o:p></span></span></p>
+
+<p class=MsoToc2 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552741"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>Der statische Teil</span></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'> </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552741 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>11<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700340031000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt;font-weight:normal'><o:p></o:p></span></span></p>
+
+<p class=MsoToc3 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552742"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>VisuellesElement</span></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'> </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552742 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>11<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700340032000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt'><o:p></o:p></span></span></p>
+
+<p class=MsoToc3 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552743"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>Ereignis</span></span><span style='mso-bookmark:
+xgraphic'><span style='color:windowtext;display:none;mso-hide:screen;
+text-decoration:none;text-underline:none'><span style='mso-tab-count:1'>  </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552743 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>11<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700340033000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt'><o:p></o:p></span></span></p>
+
+<p class=MsoToc3 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552744"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>Semaphore</span></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'>  </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552744 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>12<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700340034000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt'><o:p></o:p></span></span></p>
+
+<p class=MsoToc3 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552745"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>SemaphoreFIFO, SemaphoreLIFO, SemaphoreJAVA,
+SemaphoreRAND</span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1'>   </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552745 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>13<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700340035000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt'><o:p></o:p></span></span></p>
+
+<p class=MsoToc3 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552746"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>InteraktiveSemaphore</span></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'>  </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552746 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>14<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700340036000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt'><o:p></o:p></span></span></p>
+
+<p class=MsoToc3 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552747"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>InteraktiveSemaphoreFIFO,
+InteraktiveSemaphoreLIFO, InteraktiveSemaphoreJAVA, InteraktiveSemaphoreRAND</span></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'>   </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552747 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>14<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700340037000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt'><o:p></o:p></span></span></p>
+
+<p class=MsoToc3 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552748"><span style='mso-bookmark:xgraphic'><span
+lang=FR style='mso-bidi-font-size:14.0pt;mso-ansi-language:FR'>PriorityQ</span></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'>   </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552748 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>14<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700340038000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt'><o:p></o:p></span></span></p>
+
+<p class=MsoToc3 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552749"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>QPolicy, QPolicyFIFO, QPolicyLIFO,
+QPolicyJAVA, QPolicyRAND</span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1'>   </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552749 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>14<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700340039000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt'><o:p></o:p></span></span></p>
+
+<p class=MsoToc3 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552750"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>Signal</span></span><span style='mso-bookmark:
+xgraphic'><span style='color:windowtext;display:none;mso-hide:screen;
+text-decoration:none;text-underline:none'><span style='mso-tab-count:1'> </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552750 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>15<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700350030000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt'><o:p></o:p></span></span></p>
+
+<p class=MsoToc3 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552751"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>Ganzzahl</span></span><span style='mso-bookmark:
+xgraphic'><span style='color:windowtext;display:none;mso-hide:screen;
+text-decoration:none;text-underline:none'><span style='mso-tab-count:1'> </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552751 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>15<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700350031000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt'><o:p></o:p></span></span></p>
+
+<p class=MsoToc3 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552752"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>Fliesskomma</span></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'>  </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552752 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>16<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700350032000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt'><o:p></o:p></span></span></p>
+
+<p class=MsoToc3 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552753"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>Ringpuffer</span></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'> </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552753 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>16<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700350033000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt'><o:p></o:p></span></span></p>
+
+<p class=MsoToc4 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552754"><span style='mso-bookmark:xgraphic'>Der
+ungeschützte Ringpuffer</span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1'> </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552754 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>16<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700350034000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt'><o:p></o:p></span></span></p>
+
+<p class=MsoToc4 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552755"><span style='mso-bookmark:xgraphic'>Der
+geschützte Ringpuffer</span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1'> </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552755 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>17<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700350035000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt'><o:p></o:p></span></span></p>
+
+<p class=MsoToc1><span style='mso-bookmark:xgraphic'></span><a
+href="#_Toc496552756"><span style='mso-bookmark:xgraphic'>Beispiele</span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'>  </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552756 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>18<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700350036000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt;font-family:"Times New Roman";text-transform:none;
+font-weight:normal'><o:p></o:p></span></span></p>
+
+<p class=MsoToc2 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552757"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>Die speisenden Philosophen
+(„DiningPhilosophers“)</span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;display:none;mso-hide:screen;text-decoration:none;
+text-underline:none'><span style='mso-tab-count:1'> </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552757 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>18<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700350037000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt;font-weight:normal'><o:p></o:p></span></span></p>
+
+<p class=MsoToc2 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552758"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>Lost Update</span></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'>  </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552758 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>19<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700350038000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt;font-weight:normal'><o:p></o:p></span></span></p>
+
+<p class=MsoToc2 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552759"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>Consumer Producer</span></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'>  </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF _Toc496552759
+\h </span></span><span style='mso-bookmark:xgraphic'><span style='color:windowtext;
+text-decoration:none;text-underline:none'><span style='display:none;mso-hide:
+screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>20<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700350039000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt;font-weight:normal'><o:p></o:p></span></span></p>
+
+<p class=MsoToc2 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552760"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>ConsumerProducerSem</span></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'>   </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552760 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>21<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700360030000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt;font-weight:normal'><o:p></o:p></span></span></p>
+
+<p class=MsoToc2 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552761"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>OneConsumerTwoProducer</span></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'>  </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552761 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>22<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700360031000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt;font-weight:normal'><o:p></o:p></span></span></p>
+
+<p class=MsoToc2 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552762"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>ConsumerProducerStd</span></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'>  </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF _Toc496552762
+\h </span></span><span style='mso-bookmark:xgraphic'><span style='color:windowtext;
+text-decoration:none;text-underline:none'><span style='display:none;mso-hide:
+screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>22<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700360032000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt;font-weight:normal'><o:p></o:p></span></span></p>
+
+<p class=MsoToc2 style='tab-stops:right 453.0pt'><span style='mso-bookmark:
+xgraphic'></span><a href="#_Toc496552763"><span style='mso-bookmark:xgraphic'><span
+style='mso-bidi-font-size:14.0pt'>Resources</span></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'><span
+style='mso-tab-count:1'>  </span></span></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-begin'></span><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'> PAGEREF
+_Toc496552763 \h </span></span><span style='mso-bookmark:xgraphic'><span
+style='color:windowtext;text-decoration:none;text-underline:none'><span
+style='display:none;mso-hide:screen'><span style='mso-element:field-separator'></span></span></span></span><![endif]--><span
+style='mso-bookmark:xgraphic'><span style='color:windowtext;display:none;
+mso-hide:screen;text-decoration:none;text-underline:none'>24<!--[if gte mso 9]><xml>
+ <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003400390036003500350032003700360033000000</w:data>
+</xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span></a><span style='mso-bookmark:xgraphic'><span
+style='font-size:12.0pt;font-weight:normal'><o:p></o:p></span></span></p>
+
+<h1><span style='mso-bookmark:xgraphic'></span><!--[if supportFields]><span
+style='mso-bookmark:xgraphic'></span><span style='mso-element:field-end'></span><![endif]--><span
+style='mso-bookmark:xgraphic'></span><span style='mso-bookmark:xgraphic'><sup><span
+style='mso-text-raise:0pt'><br clear=all style='page-break-before:always'>
+<a name="_Toc496552725"></a></span></sup></span><!--[if gte vml 1]><v:rect
+ id="_x0000_s1028" style='position:absolute;left:0;text-align:left;
+ margin-left:2in;margin-top:28.8pt;width:8.4pt;height:63pt;z-index:-15;
+ mso-position-horizontal-relative:page;mso-position-vertical-relative:page'
+ o:allowincell="f" filled="f" stroked="f" strokecolor="white" strokeweight="6pt">
+ <v:textbox style='mso-next-textbox:#_x0000_s1028' inset="0,0,0,0"/>
+ <w:wrap anchorx="page" anchory="page"/>
+ <w:anchorlock/>
+</v:rect><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:-15;left:0px;margin-left:192px;margin-top:38px;width:14px;
+height:86px'>
+
+<table cellpadding=0 cellspacing=0>
+ <tr>
+  <td width=14 height=86 align=left valign=top style='vertical-align:top'><![endif]><![if !mso]><span
+  style='position:absolute;left:0pt;z-index:-15'>
+  <table cellpadding=0 cellspacing=0 width="100%">
+   <tr>
+    <td><![endif]>
+    <div v:shape="_x0000_s1028" style='padding:0pt 0pt 0pt 0pt' class=shape>
+    <p class=MsoNormal style='margin-left:.1pt;line-height:6.25pt;mso-line-height-rule:
+    exactly'><span style='font-size:20.0pt;mso-bidi-font-size:10.0pt'>.<br>
+    .<br>
+    .<br>
+    .<br>
+    .<br>
+    .<br>
+    ..<br>
+    .<br>
+    .<o:p></o:p></span></p>
+    <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+    </div>
+    <![if !mso]></td>
+   </tr>
+  </table>
+  </span><![endif]><![if !mso & !vml]>&nbsp;<![endif]><![if !vml]></td>
+ </tr>
+</table>
+
+</span><![endif]><span style='mso-bookmark:xgraphic'><span style='mso-bookmark:
+_Toc496552725'></span></span><!--[if gte vml 1]><v:rect id="_x0000_s1026"
+ style='position:absolute;left:0;text-align:left;margin-left:413.85pt;
+ margin-top:85.2pt;width:108pt;height:6pt;z-index:-16;
+ mso-position-horizontal-relative:page;mso-position-vertical-relative:page'
+ o:allowincell="f" fillcolor="#e5e5e5" strokecolor="white" strokeweight="2.5pt">
+ <w:wrap anchorx="page" anchory="page"/>
+ <w:anchorlock/>
+</v:rect><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:-16;left:0px;margin-left:551px;margin-top:113px;width:147px;
+height:11px'><img width=147 height=11 src="./Dokumfinal-Dateien/image001.gif"
+v:shapes="_x0000_s1026"></span><![endif]><span style='mso-bookmark:xgraphic'></span><span
+style='mso-bookmark:_Toc496552725'><sup><span style='mso-text-raise:0pt'>Einführung</span></sup></span><sup><span
+style='mso-text-raise:0pt'><o:p></o:p></span></sup></h1>
+
+<p class=MsoBodyText><!--[if gte vml 1]><v:rect id="_x0000_s1039" style='position:absolute;
+ left:0;text-align:left;margin-left:2in;margin-top:28.8pt;width:8.4pt;height:63pt;
+ z-index:-12;mso-position-horizontal-relative:page;
+ mso-position-vertical-relative:page' o:allowincell="f" filled="f" stroked="f"
+ strokecolor="white" strokeweight="6pt">
+ <v:textbox style='mso-next-textbox:#_x0000_s1039' inset="0,0,0,0"/>
+ <w:wrap anchorx="page" anchory="page"/>
+ <w:anchorlock/>
+</v:rect><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:-13;left:0px;margin-left:192px;margin-top:38px;width:14px;
+height:86px'>
+
+<table cellpadding=0 cellspacing=0>
+ <tr>
+  <td width=14 height=86 align=left valign=top style='vertical-align:top'><![endif]><![if !mso]><span
+  style='position:absolute;left:0pt;z-index:-12'>
+  <table cellpadding=0 cellspacing=0 width="100%">
+   <tr>
+    <td><![endif]>
+    <div v:shape="_x0000_s1039" style='padding:0pt 0pt 0pt 0pt' class=shape>
+    <p class=MsoNormal style='margin-left:.1pt;line-height:6.25pt;mso-line-height-rule:
+    exactly'><span style='font-size:20.0pt;mso-bidi-font-size:10.0pt'>.<br>
+    .<br>
+    .<br>
+    .<br>
+    .<br>
+    .<br>
+    ..<br>
+    .<br>
+    .<o:p></o:p></span></p>
+    <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+    </div>
+    <![if !mso]></td>
+   </tr>
+  </table>
+  </span><![endif]><![if !mso & !vml]>&nbsp;<![endif]><![if !vml]></td>
+ </tr>
+</table>
+
+</span><![endif]><!--[if gte vml 1]><v:rect id="_x0000_s1038" style='position:absolute;
+ left:0;text-align:left;margin-left:413.85pt;margin-top:85.2pt;width:108pt;
+ height:6pt;z-index:-13;mso-position-horizontal-relative:page;
+ mso-position-vertical-relative:page' o:allowincell="f" fillcolor="#e5e5e5"
+ strokecolor="white" strokeweight="2.5pt">
+ <w:wrap anchorx="page" anchory="page"/>
+ <w:anchorlock/>
+</v:rect><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:-14;left:0px;margin-left:551px;margin-top:113px;width:147px;
+height:11px'><img width=147 height=11 src="./Dokumfinal-Dateien/image002.gif"
+v:shapes="_x0000_s1038"></span><![endif]>Probleme und Mechanismen der
+Kommunikation und Synchronisation von nebenläufigen Prozessen stellen einen
+wesentlichen Aspekt in jeder Hochschulvorlesung zum Thema Betriebssysteme dar.
+Auch anderswo hat das Thema Gewicht: In der „gewöhnlichen“
+Anwendungsentwicklung wird immer öfter nebenläufig programmiert. Das Thema
+„Semaphore &amp; Co.“ füllt wesentlichen Raum der Informatik und betrifft jeden
+Informatiker. Leider ist es jedoch<span style="mso-spacerun: yes"> 
+</span>nicht das anschaulichste Gebiet der Disziplin. Fast immer können die
+Abläufe nur durch Erfindung hypothetischer Hintergrundbedingungen und<span
+style="mso-spacerun: yes">  </span>schrittweisem „Nach-denken“ einfacher
+Beispielprogramme durchschaut werden. Unmittelbar zu sehen, was passiert, ist
+unmöglich.</p>
+
+<p class=MsoBodyText>Dieses Manko zu beheben, ist Zweck der
+Java-Klassenbibliothek „IPKSim“. Sie unterstützt die Visualisierung von
+Mechanismen und<span style="mso-spacerun: yes">  </span>Problemen der
+Interprozess- (bzw. Inter“thread“-) synchronisation und –kommunikation.</p>
+
+<p class=MsoBodyText>Die Bibliothek stellt Elemente zur Verfügung, wie Sie
+typischerweise in nebenläufigen Programmen benötigt werden, z.B. Semaphore. Die
+Elemente erfüllen die Funktionen, die man sich von ihnen erwartet und jedes
+Element kann jedoch dabei in einem Fenster beobachtet werden. Solche Elemente
+sind z.T. implizit, z.T. explizit veränderbar. Implizit veränderbar sind z.B.
+Semaphore, die über die üblichen Funktionen (bzw- Methoden, denn wir befinden
+uns in einer objektorientierten Welt) manipuliert werden. Zu beobachten sind
+dann der Zähler und evtl. die Prozesswarteschlange der Semaphore. Explizite
+Elemente sind solche, die ausdrücklich der Visualisierung dienen, und in der
+Programmlogik<span style="mso-spacerun: yes">  </span>evtl. einen anderweitigen
+Aktor ersetzen. Ein solches ist z.B. das Element „Signal“.</p>
+
+<p class=MsoBodyText>Darüberhinaus stellt die Bibliothek einige makroskopische
+Programmobjekte zur Verfügung, die in entsprechenden Beispielprogrammen
+typischerweise auftauchen, z.B. einen visualisierten/ beobachtbaren Ringpuffer
+sowie ein Framework für Programme, die die „IPKSim“ benutzen. Letzteres zu
+verwenden, ist dem Benutzer natürlich freigestellt, allerdings ergeben sich bei
+Benutzung des Frameworks weitere komfortable Steuerungsmöglichkeiten.</p>
+
+<p class=MsoBodyText>Höhere Transparenz bei eigenen Programmen – wie auch bei
+den mitgelieferten Beispielen – ergibt sich, wenn die Programme in einem
+Debugger, evtl. sogar im Einzelschrittbetrieb, ausgeführt werden. Wie dies mit
+Hilfe der Entwicklungsumgebung „Visual Age for Java“ von IBM geschehen
+kann,<span style="mso-spacerun: yes">  </span>ist in einer gesonderten
+Anleitung erklärt, die im Paketumfang enthalten ist.</p>
+
+<p class=MsoBodyText>Die vorliegende Dokumentation, weitere Informationen,
+sowie Möglichkeiten zum Download des Pakets sind auf der IPKSim-Homepage zu
+finden unter: <a href="http://www.ipksim.de/">www.ipksim.de</a></p>
+
+<b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:"Times New Roman";
+mso-fareast-font-family:"Times New Roman";letter-spacing:-.2pt;mso-font-kerning:
+14.0pt;mso-ansi-language:DE;mso-fareast-language:DE;mso-bidi-language:AR-SA'><br
+clear=all style='mso-special-character:line-break;page-break-before:always'>
+</span></i></b>
+
+<h3><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></h3>
+
+<h1><!--[if gte vml 1]><v:rect id="_x0000_s1060" style='position:absolute;
+ left:0;text-align:left;margin-left:156pt;margin-top:40.8pt;width:8.4pt;
+ height:63pt;z-index:-8;mso-position-horizontal-relative:page;
+ mso-position-vertical-relative:page' o:allowincell="f" filled="f" stroked="f"
+ strokecolor="white" strokeweight="6pt">
+ <v:textbox style='mso-next-textbox:#_x0000_s1060' inset="0,0,0,0"/>
+ <w:wrap anchorx="page" anchory="page"/>
+ <w:anchorlock/>
+</v:rect><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:-11;left:0px;margin-left:208px;margin-top:54px;width:14px;
+height:86px'>
+
+<table cellpadding=0 cellspacing=0>
+ <tr>
+  <td width=14 height=86 align=left valign=top style='vertical-align:top'><![endif]><![if !mso]><span
+  style='position:absolute;left:0pt;z-index:-8'>
+  <table cellpadding=0 cellspacing=0 width="100%">
+   <tr>
+    <td><![endif]>
+    <div v:shape="_x0000_s1060" style='padding:0pt 0pt 0pt 0pt' class=shape>
+    <p class=MsoNormal style='margin-left:.1pt;line-height:6.25pt;mso-line-height-rule:
+    exactly'><span style='font-size:20.0pt;mso-bidi-font-size:10.0pt'>.<br>
+    .<br>
+    .<br>
+    .<br>
+    .<br>
+    .<br>
+    ..<br>
+    .<br>
+    .<o:p></o:p></span></p>
+    <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+    </div>
+    <![if !mso]></td>
+   </tr>
+  </table>
+  </span><![endif]><![if !mso & !vml]>&nbsp;<![endif]><![if !vml]></td>
+ </tr>
+</table>
+
+</span><![endif]><a name="_Toc496552726"></a><!--[if gte vml 1]><v:rect id="_x0000_s1059"
+ style='position:absolute;left:0;text-align:left;margin-left:427.05pt;
+ margin-top:108.2pt;width:108pt;height:6pt;z-index:-9;
+ mso-position-horizontal-relative:page;mso-position-vertical-relative:page'
+ o:allowincell="f" fillcolor="#e5e5e5" strokecolor="white" strokeweight="2.5pt">
+ <w:wrap anchorx="page" anchory="page"/>
+ <w:anchorlock/>
+</v:rect><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:-12;left:0px;margin-left:568px;margin-top:143px;width:147px;
+height:11px'><img width=147 height=11 src="./Dokumfinal-Dateien/image003.gif"
+v:shapes="_x0000_s1059"></span><![endif]><span style='mso-bookmark:_Toc496552726'><sup><span
+style='mso-text-raise:0pt'>Das Konzept von IPKSim</span></sup></span><sup><span
+style='mso-text-raise:0pt'><o:p></o:p></span></sup></h1>
+
+<h2><a name="_Toc496552727">Verwendung von IPKSim</a></h2>
+
+<p class=MsoBodyText>Soll ein Programm erstellt werden, das IPKSim benutzt, so
+kann dies zunächst in üblicher Java-Manier geschehen. Das Paket muß natürlich
+importiert werden, dann können entsprechende Elemente in gewohnter Weise
+instanziiert werden und stehen zur Verfügung. Wenn im Ablauf des erstellten
+Programms das erste Element instanziiert wird, öffnet sich ein Fenster, der
+„Visualisierungsserver“, und eine dem erzeugten Element entsprechende Anzeige
+wird sichtbar. Auch alle weiteren visuellen Elemente benutzen eben dieses
+Fenster und platzieren ihre Anzeige darin.</p>
+
+<p class=MsoBodyText>Wird das Programm mit dem IPKSim-Framework erstellt, kann
+es mit Hilfe der entsprechenden Elemente des Visualisierungsservers im Ablauf
+gesteuert werden, d.h. angehalten, gebremst oder terminiert.</p>
+
+<p class=MsoBodyText>Wie dies im Detail zu geschehen hat, wird in den folgenden
+Abschnitten dargestellt.</p>
+
+<p class=MsoBodyText><span style="mso-spacerun: yes"> </span></p>
+
+<h2><a name="_Toc496552728">Das Klassenmodell von IPKSim</a></h2>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText>Die folgende Seite zeigt ein Klassenstrukturdiagramm, das
+den Aufbau des Pakets illustriert. In der Mitte – gruppiert um die Basisklasse
+„VisuellesElement“ – der statische Teil des Pakets diversen Elementen. Auf der
+rechten Seite die Semaphorklasse und links unten der dynamische Teil des
+Pakets: das Framework, von dem der Benutzer die spezifischen (und natürlich
+nicht in der Bibliothek enthaltenen) Prozesse und seine Anwendung ableitet: im
+Diagramm „userspezifische/r Anwendung/Prozeß“ genannt.</p>
+
+<h2><a name="_Toc496552729">Die visuellen Elemente</a></h2>
+
+<p class=MsoBodyText>Die zentralen Elemente sind im statischen Teil die Klasse
+„VisuellesElement“ und der Visualisierungsserver, genannt Server. In der
+abstrakten Klasse „Visuelles_IPKS_Element“ verbirgt sich der
+Zusammenspielmechanismus zwischen den von ihm abgeleiteten konkreten Elementen
+und dem Server, der (mit Hilfe des „swing“-Paketes) die Koordination des
+Ausgabefensters realisiert. Die essentiellen Funktionen und Datenstrukturen
+z.B. einer Semaphore befinden sich dann in der abgeleiteten Klasse, ebenso die
+konkreten Zeichenmethoden für ihr Display. Den visuellen Elementen braucht
+keine Referenz auf den Server übergeben zu werden. Der Server ist global.</p>
+
+<p class=MsoBodyText>Eine Sonderstellung unter den visuellen Elementen hat die
+„Prozeßanzeige“: Sie wird in<span style="mso-spacerun: yes">  </span>der Klasse
+Anwendung benutzt. Normalerweise wird der Benutzer keine Prozeßanzeige selbst
+instanziieren.</p>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:324pt;
+ height:713.25pt' fillcolor="window">
+ <v:imagedata src="./Dokumfinal-Dateien/image004.png" o:title="diagramm2"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=432 height=951
+src="./Dokumfinal-Dateien/image005.gif" v:shapes="_x0000_i1025"><![endif]></p>
+
+<h2><a name="_Toc496552730">Das Framework</a></h2>
+
+<p class=MsoBodyText>In der linken unteren Ecke sich der dynamische Teil des
+Pakets: Das Framework, bei dessen Benutzung erst die volle Funktionalität des
+Pakets möglich wird. Wie dies geschieht wird weiter unten näher erläutert. Im
+folgenden jedoch einige begriffliche Erklärungen:</p>
+
+<p class=MsoBodyText>Die <i style='mso-bidi-font-style:normal'>Anwendung</i>
+realisiert den globalen Speicherbereich des Multithreading-Programmes. <i
+style='mso-bidi-font-style:normal'>Anwendung</i> ist nur einmal im System
+vorhanden und kann von den Prozessen über eine statische Referenz angesprochen
+werden. Die <i style='mso-bidi-font-style:normal'>Anwendung</i> enthält auch
+die unvermeidliche main()-Funktion/ Methode, damit das Java-Programm ausführbar
+ist.</p>
+
+<p class=MsoBodyText>Der <i style='mso-bidi-font-style:normal'>Prozess</i> ist
+eine Ableitung von Java-Thread. Obwohl er selbst die ausführbare Einheit ist,
+ist er nur über seine zugehörigkeit zur Anwendung (mittelbar, denn jeder Thread
+gehört einer Threadgroup an, von der die Anwendung abgeleitet ist)<span
+style="mso-spacerun: yes">  </span>gestartet werden. </p>
+
+<h2><a name="_Toc496552731">Das dynamische Konzept</a></h2>
+
+<h3><a name="_Toc496552732">Das Anwendungs- Framework</a></h3>
+
+<p class=MsoBodyText>IPKSim stellt ein Framework bereit, das die Entwicklung
+von IPKSim-Programmen unterstützt. </p>
+
+<p class=MsoBodyText>Mit seiner Hilfe kann sich der Entwickler auf den
+Problemkern konzentrieren, ohne sich mit dem „D’rumherum“ belasten zu müssen.
+Dazu gehört bei IPKSim die komplette Steuerung des Anwendungsablaufs, die
+Visualisierung der definierten, gemeinsamen Objekte, sowie der Verwaltung und
+Steuerung der vom Entwickler definierten Prozesse. Für all dies stellt IPKSim
+(Basis-)Klassen bereit, die diese Aufgaben übernehmen. </p>
+
+<h3><a name="_Toc496552733">Das Zusammenspiel von Anwendung und Prozessen</a></h3>
+
+<p class=MsoBodyText>Die beiden zentralen Klassen im Anwendungs- Framework sind
+<b style='mso-bidi-font-weight:normal'>Anwendung</b> und <b style='mso-bidi-font-weight:
+normal'>Prozess</b>. Beides sind abstrakte Basisklassen, die vom Entwickler für
+den Einsatz im eigenen IPKSim- Programm abgeleitet werden müssen. Die
+speziellen Anwendungs- und Prozessklassen müssen dabei jeweils die Methode
+überschreiben, mit der sie auf ihre jeweilige Bestimmung angepasst werden.</p>
+
+<p class=MsoBodyText>Bei der Anwendung steht die Methode init() im Mittelpunkt
+des Interesses. In ihr werden sämtliche, in der IPKSim-Anwendung zu
+verwendenden Prozesse und visuellen Elemente instanziiert. Einmal definiert und
+instanziiert, braucht sich der Entwickler nicht weiter um diese verwendeten
+Elemente kümmern, das Anwendungs-Framework nimmt ihm die komplette
+Initialisierung, Visualisierung und Steuerung ab. Alles, was der Entwickler tun
+muß, um seine Anwendung zum Laufen zu bringen ist, eine Instanz seiner
+speziellen Anwendungsklasse zu erzeugen, was er normalerweise in deren
+main()-Methode macht. Eine detailliertere Beschreibung des Umgangs mit
+Anwendungsklassen findet sich weiter unten im Kapitel Klassenbeschreibungen.</p>
+
+<p class=MsoBodyText>Die entscheidende Methode der Klasse Prozess ist
+schleife(). In ihr hat der Entwickler den Rumpf des Anwendungscodes des
+jeweiligen Prozesses zu implementieren. Dieser Code läuft, sobald der Prozess
+durch das IPKSim- Framework gestartet wurde, in einer Endlosschleife. Ein
+Prozess kann sich entweder explizit durch einen entsprechenden Methodenaufruf
+beenden oder manuell im Visualisierungsfenster durch den Benutzer beendet
+werden. Darüberhinaus besteht auch die Möglichkeit, Prozesse vorübergehend
+anzuhalten, um sie später fortzusetzen. Die Prozess-Klasse wird im Kapitel Klassenbeschreibungen
+ebenfalls noch detaillierter beschrieben.</p>
+
+<p class=MsoBodyText>Wie IPKSim dabei die Visualisierung bewerkstelligt, wird
+im nächsten Kapitel erläutert. </p>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h2><a name="_Toc496552734">Visualisierungskonzept</a></h2>
+
+<h3><a name="_Toc496552735">Nutzer-Programm-Sicht</a></h3>
+
+<p class=MsoBodyText>IPKSim bietet Visualisierungen der verwendeten
+IPKS-Elemente. Dadurch wird es möglich, die Veränderungen während des
+Programmablaufs zu beobachten. Die graphischen Darstellungen der Elemente
+werden zusammengefaßt im Fenster des Visualisierungservers dargestellt. Dieser
+bietet während des Ablaufs die Möglichkeit, die Elemente nach den Wünschen des
+Nutzer anzuordnen.</p>
+
+<p class=MsoBodyText><!--[if gte vml 1]><v:shape id="_x0000_i1027" type="#_x0000_t75"
+ style='width:338.25pt;height:277.5pt' o:ole="" fillcolor="window">
+ <v:imagedata src="./Dokumfinal-Dateien/image006.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=451 height=370
+src="./Dokumfinal-Dateien/image007.jpg" v:shapes="_x0000_i1027"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="CorelPhotoPaint.Image.7"
+  ShapeID="_x0000_i1027" DrawAspect="Content" ObjectID="_1033463088">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoBodyText>Der Visualisierungsserver ist eine eigenständige
+Komponente im IPKSim-Paket. Die Anwendung konfiguriert ihn automatisch und
+macht ihn sichtbar.</p>
+
+<p class=MsoBodyText>Die visuellen Elemente melden sich bei ihrer Erzeugung
+selbstständig beim Server an. Weiterhin kümmern sie sich selbst um die
+Richtigkeit und Aktualität ihrer Anzeigen. Wenn z.B. der Nutzer einen p()
+Aufruf bei einem Semaphor durchführt, wird dieses automatisch seine Anzeige dem
+neuen Zustand anpassen.</p>
+
+<p class=MsoBodyText>Durch diese Verhaltensweisen der Anwendung und der
+Elemente wird der Nutzer beim Programmieren nicht auf die graphische
+Darstellung achten müssen; sie steht automatisch zur Verfügung.</p>
+
+<h3><a name="_Toc496552736">Paket-Programmierer-Sicht</a></h3>
+
+<p class=MsoBodyText>Wie wird das aus der Nutzer-Programm-Sicht beschriebene
+Verhalten umgesetzt?</p>
+
+<p class=MsoBodyText>Der Server teilt sich in zwei Teile. Einer statischen
+Schnittstelle (Server) und dem tatsächlichen Server (ActualServer). Auf den
+tatsächlichen Server kann nur über die statische Schnittstelle zugegriffen
+werden. Dies dient dazu, sicherzustellen, daß es nur einen tatsächlichen Server
+gibt und alle visuellen Elemente darin angezeigt werden. Außerdem dient die
+statische Schnittstelle als globaler Anlaufpunkt:<span style="mso-spacerun:
+yes">  </span>der Server braucht nicht erst lokal angelegt zu werden, sondern
+steht gleich der Anwendung zur Verfügung.</p>
+
+<p class=MsoBodyText><!--[if gte vml 1]><v:shape id="_x0000_i1028" type="#_x0000_t75"
+ style='width:414pt;height:217.5pt' o:ole="">
+ <v:imagedata src="./Dokumfinal-Dateien/image008.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=552 height=290
+src="./Dokumfinal-Dateien/image009.gif" v:shapes="_x0000_i1028"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="CorelDraw.Graphic.7" ShapeID="_x0000_i1028"
+  DrawAspect="Content" ObjectID="_1033463090">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoBodyText>Damit die IPKS-Elemente einfacher zu programmieren sind
+(auf die graphische Darstellung bezogen), sind sie alle von der Klasse
+VisuellesElement abgeleitet. Diese Klasse bietet bereits ein Grundgerüst zur
+graphischen Darstellung und meldet das Element bei der Instanziierung
+automatisch beim Server an. Der Programmierer einer von VisuellesElement
+abgeleiteten Klasse baut in dieses Gerüst seine graphische Anzeige ein und
+sorgt dafür, daß bei Änderung des Objektzustands die Anzeige erneuert wird.</p>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><sup><span
+style='font-size:24.0pt;mso-bidi-font-size:10.0pt;font-family:"Times New Roman";
+mso-fareast-font-family:"Times New Roman";letter-spacing:-.5pt;mso-font-kerning:
+14.0pt;mso-ansi-language:DE;mso-fareast-language:DE;mso-bidi-language:AR-SA'><br
+clear=all style='mso-special-character:line-break;page-break-before:always'>
+</span></sup></i></b>
+
+<h1><![if !supportEmptyParas]>&nbsp;<![endif]><sup><span style='mso-text-raise:
+0pt'><o:p></o:p></span></sup></h1>
+
+<h1><!--[if gte vml 1]><v:rect id="_x0000_s1062" style='position:absolute;
+ left:0;text-align:left;margin-left:168pt;margin-top:52.8pt;width:8.4pt;
+ height:63pt;z-index:-6;mso-position-horizontal-relative:page;
+ mso-position-vertical-relative:page' o:allowincell="f" filled="f" stroked="f"
+ strokecolor="white" strokeweight="6pt">
+ <v:textbox style='mso-next-textbox:#_x0000_s1062' inset="0,0,0,0"/>
+ <w:wrap anchorx="page" anchory="page"/>
+ <w:anchorlock/>
+</v:rect><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:-9;left:0px;margin-left:224px;margin-top:70px;width:14px;
+height:86px'>
+
+<table cellpadding=0 cellspacing=0>
+ <tr>
+  <td width=14 height=86 align=left valign=top style='vertical-align:top'><![endif]><![if !mso]><span
+  style='position:absolute;left:0pt;z-index:-6'>
+  <table cellpadding=0 cellspacing=0 width="100%">
+   <tr>
+    <td><![endif]>
+    <div v:shape="_x0000_s1062" style='padding:0pt 0pt 0pt 0pt' class=shape>
+    <p class=MsoNormal style='margin-left:.1pt;line-height:6.25pt;mso-line-height-rule:
+    exactly'><span style='font-size:20.0pt;mso-bidi-font-size:10.0pt'>.<br>
+    .<br>
+    .<br>
+    .<br>
+    .<br>
+    .<br>
+    ..<br>
+    .<br>
+    .<o:p></o:p></span></p>
+    <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+    </div>
+    <![if !mso]></td>
+   </tr>
+  </table>
+  </span><![endif]><![if !mso & !vml]>&nbsp;<![endif]><![if !vml]></td>
+ </tr>
+</table>
+
+</span><![endif]><a name="_Toc496552737"></a><!--[if gte vml 1]><v:rect id="_x0000_s1061"
+ style='position:absolute;left:0;text-align:left;margin-left:418.05pt;
+ margin-top:126.2pt;width:108pt;height:6pt;z-index:-7;
+ mso-position-horizontal-relative:page;mso-position-vertical-relative:page'
+ o:allowincell="f" fillcolor="#e5e5e5" strokecolor="white" strokeweight="2.5pt">
+ <w:wrap anchorx="page" anchory="page"/>
+ <w:anchorlock/>
+</v:rect><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:-10;left:0px;margin-left:556px;margin-top:167px;width:147px;
+height:11px'><img width=147 height=11 src="./Dokumfinal-Dateien/image010.gif"
+v:shapes="_x0000_s1061"></span><![endif]><span style='mso-bookmark:_Toc496552737'><sup><span
+style='mso-text-raise:0pt'>Die Klassen von IPKSim</span></sup></span><sup><span
+style='mso-text-raise:0pt'><o:p></o:p></span></sup></h1>
+
+<h2><a name="_Toc496552738">Visualisierungsserver</a></h2>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText><!--[if gte vml 1]><v:shape id="_x0000_i1029" type="#_x0000_t75"
+ style='width:338.25pt;height:277.5pt' o:ole="" fillcolor="window">
+ <v:imagedata src="./Dokumfinal-Dateien/image006.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=451 height=370
+src="./Dokumfinal-Dateien/image011.jpg" v:shapes="_x0000_i1029"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="CorelPhotoPaint.Image.7"
+  ShapeID="_x0000_i1029" DrawAspect="Content" ObjectID="_1033463092">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText>Der Nutzer kann die Anzeige des Servers zur Laufzeit des
+Programms verändern. Es stehen dazu zwei Möglichkeiten zur Verfügung. Zum einen
+kann er die Zahl der Spalten, in denen die Elemente angeordnet werden, erhöhen
+bzw. erniedrigen. Dazu gibt es die beiden Knöpfe in der Werkzeugleiste „+
+Spalte“ bzw. „- Spalte“. Zum anderen können die Anzeigepositionen zweier
+Elemente miteinander vertauscht werden. Hierzu wählt man durch einfachen
+Mausklick das eine zu vertauschende Element an. Der Rahmen färbt sich gelb und
+markiert das Element als ausgewählt. Nach Klick auf ein zweites werden beide
+Elemente vertauscht. Durch Erneutes Anklicken eines bereits markierten Elements
+wird die Markierung wieder aufgehoben. </p>
+
+<p class=MsoBodyText>Der Visualisierungsserver besteht aus den beiden Klassen <i
+style='mso-bidi-font-style:normal'>Server</i> und <i style='mso-bidi-font-style:
+normal'>ActualServer</i>. Der Zugriff auf den Visualisierungsserver sollte
+ausschließlich über die statische Klasse <i style='mso-bidi-font-style:normal'>Server</i>
+geschehen. Für den Anwender sollte es aber kein Bedürfnis geben, Methoden des
+Servers direkt zu nutzen. Die Einrichtung des Servers erfolgt automatisch über
+die Anwendung. Die Elemente fügen sich selbstständig bei ihrer Instanziierung
+hinzu, da sie von <i style='mso-bidi-font-style:normal'>VisuellesElement</i>
+abgeleitet sind und selbstständig für ihre Aktualisierung ihrer Anzeige sorgen.</p>
+
+<p class=MsoBodyText style='margin-left:0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h2><a name="_Toc496552739">Der dynamische Teil</a></h2>
+
+<h3><a name="_Toc496552740">Prozess</a></h3>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText><!--[if gte vml 1]><v:shape id="_x0000_i1030" type="#_x0000_t75"
+ style='width:104.25pt;height:99.75pt' o:ole="" fillcolor="window">
+ <v:imagedata src="./Dokumfinal-Dateien/image012.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=139 height=133
+src="./Dokumfinal-Dateien/image013.jpg" v:shapes="_x0000_i1030"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="CorelPhotoPaint.Image.7"
+  ShapeID="_x0000_i1030" DrawAspect="Content" ObjectID="_1033463093">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText>Die Klasse <i style='mso-bidi-font-style:normal'>Prozess</i>
+dient der Programmierung eines eigenständigen Ausführungsstrangs. Bei der
+Instanziierung wird für den Prozess automatisch eine Anzeige (<i
+style='mso-bidi-font-style:normal'>ProzessAnzeige</i>) im Visualisierungsserver
+erzeugt.</p>
+
+<p class=MsoBodyText>Ein eigener Prozess wird durch Ableiten der Prozessklasse
+und durch Überschreiben der <b style='mso-bidi-font-weight:normal'>init()</b>
+und <b style='mso-bidi-font-weight:normal'>schleife()</b>-Methode definiert.
+Ist keine Initialisierung nötig, ist ein Überschreiben von <b style='mso-bidi-font-weight:
+normal'>init()</b> nicht nötig. Nach dem Aufrufen von <b style='mso-bidi-font-weight:
+normal'>starten()</b> wird zuerst einmal <b style='mso-bidi-font-weight:normal'>init()</b>
+aufgerufen und dann der Code in <b style='mso-bidi-font-weight:normal'>schleife()</b>
+zyklisch wiederholt bis zum Aufruf von <b style='mso-bidi-font-weight:normal'>beenden()</b>
+. Die Ausführung des Prozesses kann durch<span style="mso-spacerun: yes"> 
+</span><b style='mso-bidi-font-weight:normal'>anhalten(true)</b> unterbrochen
+werden; mit <b style='mso-bidi-font-weight:normal'>anhalten(false)</b> wird ein
+zuvor angehaltener Prozeß fortgesetzt.</p>
+
+<p class=MsoBodyText>Die Klasse „Prozess“ enthält die Hilfsmethode <b
+style='mso-bidi-font-weight:normal'>warten(double)</b> . Beim Aufruf von <b
+style='mso-bidi-font-weight:normal'>warten(double)</b> wartet der Prozess die angegebene
+Zeit in Sekunden,wobei der Wartezeit-Multiplikator berücksichtigt wird. Der
+Wartezeit-Multiplikator steht standardmäßig auf 1, und<span
+style="mso-spacerun: yes">  </span>kann über die Prozessanzeige oder mit dem
+Aufruf von <b style='mso-bidi-font-weight:normal'>setzeWartenMultiplikator(double)
+</b>verändert werden. Der Wartezeit-Multiplikator ist prozeßlokal.</p>
+
+<p class=MsoBodyText>Das Überschreiben der Funktion <b style='mso-bidi-font-weight:
+normal'>schleife()</b> kann auf mehrere Arten durchgeführt werden: Mit
+eingebetteten Klassen oder das<span style="mso-spacerun: yes">  </span>gewohnte
+Erstellen einer neuen Unterklasse von „Prozess“.<br>
+Die Verwendung von eingebetteten Klassen ermöglicht den direkten Zugriff auf
+Variablen, die in der init()-Methode<span style="mso-spacerun: yes"> 
+</span>der Anwendung deklariert sind; Hier ist jedoch zu beachten, dass der
+Debugger von VAfJ<span style="mso-spacerun: yes">  </span>keine Haltepunkte in
+eingebetteten Klassen setzen kann.<br>
+Bei der Erstellung einer Unterklasse können die Debuggerfähigkeiten von VAfJ
+voll genutzt werden. Der Zugriff auf die Variablen der Anwendung gestaltet sich
+aber etwas aufwendiger. Der abgeleitete Prozess muß sich von der
+Nutzer-Anwendung über das statische Feld „<b style='mso-bidi-font-weight:normal'>anwendung“</b>
+eine Referenz auf die Nutzer-Anwendung holen. Über diese Referenz kann man dann
+auf die Variablen der Anwendung zugreifen:<br>
+Direkt zugreifbar (ohne Angabe einer Objektreferenz) sind Variablen in Java nur
+in ihrer eigenen Klasse. Will man aus anderen Klassen, z.B. einem IPKsim-Prozeß,
+auf die selbe Variable, zugreifen, so benötigt man eine Referenz auf das
+Objekt, in der sich die gemeinsam genutzte Variable befindet. Hierfür stellt
+die Anwendungsklasse die Variable <b style='mso-bidi-font-weight:normal'>anwendung</b>
+zur Verfügung. Sie ist statisch definiert und enthält die Referenz auf das
+laufende Anwendungsobjekt. Über sie kann auf die Variablen in der Klasse
+zugegriffen werden. Somit dient das Anwendungsobjekt als globaler Speicher.
+Beim Zugriff ist zu beachten, daß die Referenz in <b style='mso-bidi-font-weight:
+normal'>anwendung</b> auf die tatsächliche Nutzeranwendungsklasse „gecasted“
+werden muß (<span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>NutzerAnwendung
+data = (NutzerAnwendung)Anwendung.anwendung</span>).</p>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h2><a name="_Toc496552741">Der statische Teil</a></h2>
+
+<h3><a name="_Toc496552742">VisuellesElement</a></h3>
+
+<p class=MsoBodyText>Die abstrakte Klasse VisuellesElement stellt die
+Basisklasse für alle von IPKSim bereitgestellten, visualisierbaren Variablen
+dar. Soll die Palette visualisierbarer Variablen später erweitert werden,<span
+style="mso-spacerun: yes">  </span>müssen alle visualierbaren Variablen von
+VisuellesElement abgeleitet sein, damit sie vom Visualisierungsserver
+angesprochen und dargestellt werden können</p>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h3><a name="_Toc496552743">Ereignis</a></h3>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText><!--[if gte vml 1]><v:shape id="_x0000_i1031" type="#_x0000_t75"
+ style='width:95.25pt;height:86.25pt' o:ole="" fillcolor="window">
+ <v:imagedata src="./Dokumfinal-Dateien/image014.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=127 height=115
+src="./Dokumfinal-Dateien/image015.jpg" v:shapes="_x0000_i1031"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="CorelPhotoPaint.Image.7"
+  ShapeID="_x0000_i1031" DrawAspect="Content" ObjectID="_1033463095">
+ </o:OLEObject>
+</xml><![endif]--><span style='mso-tab-count:1'>         </span><!--[if gte vml 1]><v:shape
+ id="_x0000_i1032" type="#_x0000_t75" style='width:98.25pt;height:87.75pt'
+ o:ole="" fillcolor="window">
+ <v:imagedata src="./Dokumfinal-Dateien/image016.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=131 height=117
+src="./Dokumfinal-Dateien/image017.jpg" v:shapes="_x0000_i1032"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="CorelPhotoPaint.Image.7"
+  ShapeID="_x0000_i1032" DrawAspect="Content" ObjectID="_1033463096">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText>Ein Ereignis-Objekt stellt ein Objekt dar, bei welchem
+sich Prozesse anmelden und solange wartend gesetzt werden, bis ein Ereignis
+eintritt. Es stehen zwei Ereignisse im IPKSim-Paket zur Verfügung. Ein
+manuelles – <i style='mso-bidi-font-style:normal'>ManuellesEreignis</i> -<span
+style="mso-spacerun: yes">  </span>und ein automatisches – <i style='mso-bidi-font-style:
+normal'>AutomatischesEreignis</i>. Das manuelle Ereignis wird durch Betätigen
+des Ereignisknopfes in der Anzeige erzeugt. Dem Auslöser kann beim
+Instanziieren ein frei gewählter Name zugewiesen werden. Das automatische
+Ereignis erzeugt mit exponential-verteilter Zwischenankunftszeit selbständig
+Ereignisse. Der Erwartungswert kann beim Instanziieren angegeben werden oder
+später mit <b style='mso-bidi-font-weight:normal'>setzeMittelwert(double) </b>eingestellt
+werden. Der Vorgabewert ist 5 Sekunden.</p>
+
+<p class=MsoBodyText>Für das Warten stehen zwei Methoden zur Verfügung: <b
+style='mso-bidi-font-weight:normal'>warteAufEreignis()</b> und <b
+style='mso-bidi-font-weight:normal'>warteAufNaechstesEreignis(int)</b>. Der
+Aufruf von <b style='mso-bidi-font-weight:normal'>warteAufEreignis()</b>
+suspendiert den aufrufenden Prozess<span style="mso-spacerun: yes">  </span>bis
+zum Eintritt ein neues Ereignisses. Bei <b style='mso-bidi-font-weight:normal'>int
+warteAufNaechstesEreignis(int)</b> übergibt der aufrufende Prozess die letzte
+ihm bekannte Ereignisnummer. Sind seitdem keine neuen Ereignisse eingetreten,
+wird der Aufrufer wartend gesetzt. Falls seit dem letzten Aufruf schon ein
+neues Ereignis eingetreten war, läuft der Prozess ohne zu warten weiter. Der
+Prozess bekommt immer die Nummer des neuesten Ereignisses zurückgegeben, welche
+er für den nächsten <b style='mso-bidi-font-weight:normal'>int
+warteAufNaechstesEreignis(int)</b>-Aufruf zwischenspeichern sollte. Beim ersten
+Aufruf von <b style='mso-bidi-font-weight:normal'>int
+warteAufNaechstesEreignis(int)</b> sollte man als Ereignisnummer 0 wählen. Dies
+bewirkt, daß erst mal auf ein neues Ereignis gewartet wird.<br>
+Wenn beim Eintritt eines Ereignisses eine Sequenz von Anweisungen ausgeführt
+werden soll, kann dies durch Überschreiben von <b style='mso-bidi-font-weight:
+normal'>bearbeite()</b> bewerkstelligt werden. Die warte-Methoden sind jedoch
+zu bevorzugen.</p>
+
+<p class=MsoBodyText>Die Ereignisse bestehen grundsätzlich aus zwei Teilen:
+einem Ereigniserzeuger – beim ManuellenEreignis ein Knopf, beim
+AutomatischenEreignis ein <i style='mso-bidi-font-style:normal'>EreignisThread</i>
+– und einem <i style='mso-bidi-font-style:normal'>EreignisEmpfaenger</i>, bei
+dem mittels des <i style='mso-bidi-font-style:normal'>EreignisListener</i>-Interfaces
+der Ereigniserzeuger angemeldet wird. Das Ganze beruht auf dem in den
+Java-Klassen häufig benutzten Observer-Pattern. Das Zusammensetzen und
+Initialisieren geschieht bei den beiden Ereignissen ManuellesEreignis und
+AutomatischesEreignis bei der Instanziierung von selbst.Visualisierungsserver</p>
+
+<p class=MsoBodyText>Der Nutzer kann die Anzeige des Servers zur Laufzeit des
+Programms verändern. Es stehen dazu zwei Möglichkeiten zur Verfügung. Zum einen
+kann die Zahl der Spalten, in denen die Elemente angeordnet werden, erhöht bzw.
+vermindert werden. Dazu gibt es die zwei Knöpfe in der Werkzeugleiste „+
+Spalte“ bzw. „- Spalte“. Zum anderen können die Anzeigepositionen zweier
+Elemente miteinander vertauscht werden. Hierzu wählt man durch Einfachklick<span
+style="mso-spacerun: yes">  </span>das eine zu vertauschende Element an. Der
+Rahmen färbt sich gelb und zeigt an, dass das Element ausgewählt wurde. Durch
+Mausklick auf ein zweites<span style="mso-spacerun: yes">  </span>werden dann
+beide Elemente vertauscht. Durch Wiederanklicken des bereits (zum Vertauschen)
+markierten Elements kann die Markierung rückgängig gemacht werden.</p>
+
+<p class=MsoBodyText>Der Visualisierungsserver besteht aus den beiden Klassen <i
+style='mso-bidi-font-style:normal'>Server</i> und <i style='mso-bidi-font-style:
+normal'>ActualServer</i>. Der Zugriff auf den Visualisierungsserver sollte
+ausschließlich über die statische Klasse <b style='mso-bidi-font-weight:normal'>Server</b>
+geschehen. Für den Anwender sollte es aber kein Bedürfnis geben, Methoden des
+Servers direkt zu nutzen. Die Einrichtung des Servers erfolgt automatisch über
+die Anwendung.Die Elemente fügen sich selbständig bei ihrer Instanziierung
+hinzu, da sie von <i style='mso-bidi-font-style:normal'>VisuellesElement</i>
+abgeleitet sind, und sorgen selbständig für die Aktualisierung ihrer Anzeige.</p>
+
+<h3><!--[if gte vml 1]><o:wrapblock><v:shape id="_x0000_s1044" type="#_x0000_t75"
+  style='position:absolute;left:0;text-align:left;margin-left:55.7pt;
+  margin-top:0;width:147pt;height:120.75pt;z-index:7' o:allowincell="f">
+  <v:imagedata src="./Dokumfinal-Dateien/image018.png" o:title=""/>
+  <v:textbox style='mso-next-textbox:#_x0000_s1044'/>
+  <w:wrap type="topAndBottom"/>
+ </v:shape><![if gte mso 9]><o:OLEObject Type="Embed" ProgID="PBrush"
+  ShapeID="_x0000_s1044" DrawAspect="Content" ObjectID="_1033463097">
+ </o:OLEObject>
+ <![endif]><![endif]--><![if !vml]><span style='mso-ignore:vglayout'>
+ <table cellpadding=0 cellspacing=0>
+  <tr>
+   <td width=74 height=0></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><img width=196 height=161 src="./Dokumfinal-Dateien/image019.jpg"
+   v:shapes="_x0000_s1044"></td>
+  </tr>
+ </table>
+ </span><![endif]><!--[if gte vml 1]></o:wrapblock><![endif]--><br
+style='mso-ignore:vglayout' clear=ALL>
+<a name="_Toc496552744">Semaphore</a></h3>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<br style='mso-ignore:vglayout' clear=ALL>
+
+<p class=MsoBodyText>Diese Klasse implementiert eine visualisierte Semaphore.</p>
+
+<p class=MsoBodyText>Die Wartestrategie, die in der Warteschlange der Semaphore
+angewandt wird, wird definiert durch ein von <b style='mso-bidi-font-weight:
+normal'><i style='mso-bidi-font-style:normal'>Qpolicy</i></b> abgeleitetes Objekt,
+das dem Konstruktor übergeben wird. Es sollten jedoch möglichst die angebotenen
+Interfaceklassen verwendet werden, um eine Semaphore mit spezischer
+Warteschlange zu erzeugen.</p>
+
+<p class=MsoBodyText>Angezeigt wird:</p>
+
+<p class=MsoListBullet><![if !supportLists]><span style='font-size:8.0pt;
+mso-bidi-font-size:10.0pt'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Ein Farbfeld mit dem Semaphorzähler: Dieser ist grün,
+soweit die Semaphore „offen“ ist, bzw. rot, wenn diese gesperrt ist. Eine
+Semaphore sperrt, wenn ihr Zählerwert gleich null wurde oder ein p(i) (mit i
+&gt; Zähler)<span style="mso-spacerun: yes">  </span>nicht ausgeführt werden
+kann.</p>
+
+<p class=MsoListBullet style='mso-list:l13 level1 lfo18;mso-list-change:\F0B7 "Kostenlose Demoversion" 20000923T2342'><![if !supportLists]><span
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Die Prozeßwarteschlange als Farbbalkenkette und als
+Prozeßnamensliste: Durch Anklicken der Einträge in der Prozeßliste, kann zur
+Laufzeit die Reihenfolge der Threads in der Warteschlange verändert werden. Der
+ausgewählte Prozeß rückt an vorderste Stelle in der Warteschlange.</p>
+
+<span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"Times New Roman";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:DE;mso-fareast-language:
+DE;mso-bidi-language:AR-SA'><br clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoBodyText>Semaphore-Kontruktoren: </p>
+
+<p class=MsoBodyText>Bei fehlendem Namen, lautet der Defaultname „Semaphore +
+laufende Nummer“. Bei fehlendem Initialwert handelt es sich um eine binäre
+Semaphore. </p>
+
+<p class=MsoListBullet style='mso-list:l13 level1 lfo18;mso-list-change:\F0B7 "Kostenlose Demoversion" 20000923T2342'><![if !supportLists]><span
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Semaphore(Qpolicy)</p>
+
+<p class=MsoListBullet style='mso-list:l13 level1 lfo18;mso-list-change:\F0B7 "Kostenlose Demoversion" 20000923T2342'><![if !supportLists]><span
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Semaphore(Initialwert,QPolicy)</p>
+
+<p class=MsoListBullet style='mso-list:l13 level1 lfo18;mso-list-change:\F0B7 "Kostenlose Demoversion" 20000923T2342'><![if !supportLists]><span
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Semaphore(Name ,Initialwert,QPolicy)</p>
+
+<p class=MsoListBullet style='mso-list:l13 level1 lfo18;mso-list-change:\F0B7 "Kostenlose Demoversion" 20000923T2342'><![if !supportLists]><span
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Semaphore(Name, QPolicy)</p>
+
+<p class=MsoListBullet style='mso-list:l13 level1 lfo18;mso-list-change:\F0B7 "Kostenlose Demoversion" 20000923T2342'><![if !supportLists]><span
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>Semaphore kennen folgende Methoden:</p>
+
+<p class=MsoListBullet style='mso-list:l13 level1 lfo18;mso-list-change:\F0B7 "Kostenlose Demoversion" 20000923T2342'><![if !supportLists]><span
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>void p()<span style="mso-spacerun: yes">  </span>:<span
+style="mso-spacerun: yes">  </span>P-Methode , klassisch.</p>
+
+<p class=MsoListBullet style='mso-list:l13 level1 lfo18;mso-list-change:\F0B7 "Kostenlose Demoversion" 20000923T2342'><![if !supportLists]><span
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>void v() :<span style="mso-spacerun: yes">  
+</span>V-Methode, klassisch.</p>
+
+<p class=MsoListBullet style='mso-list:l13 level1 lfo18;mso-list-change:\F0B7 "Kostenlose Demoversion" 20000923T2342'><![if !supportLists]><span
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>void p(int w) : P-Methode, vermindert Semaphorzähler
+atomar um w, bzw. wartet bis Semaphorzähler mindestens w erreicht hat.</p>
+
+<p class=MsoListBullet style='mso-list:l13 level1 lfo18;mso-list-change:\F0B7 "Kostenlose Demoversion" 20000923T2342'><![if !supportLists]><span
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>void v(int w) : V-entsprechung zu p(int w).</p>
+
+<p class=MsoListBullet style='mso-list:l13 level1 lfo18;mso-list-change:\F0B7 "Kostenlose Demoversion" 20000923T2342'><![if !supportLists]><span
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>boolean versuche_p(int w) :“Nonblocking“-p(): Testet,
+ob Semaphorzähler wenigstens Wert w hat, bevor p() ausgeführt wird. Anstatt zu
+warten, kehrt der Aufruf mit Rückgabewert false zurück.</p>
+
+<h3><a name="_Toc496552745">SemaphoreFIFO, SemaphoreLIFO, SemaphoreJAVA,
+SemaphoreRAND</a></h3>
+
+<p class=MsoBodyText style='margin-left:0in'><span style='mso-tab-count:1'>            </span></p>
+
+<p class=MsoBodyText style='margin-left:0in'><span style='mso-tab-count:1'>            </span>Diese
+Interfaceklassen erzeugen Semaphore mit entsprechender Warteschlange:</p>
+
+<p class=MsoListBullet><![if !supportLists]><span lang=EN-US style='font-size:
+8.0pt;mso-bidi-font-size:10.0pt;mso-ansi-language:EN-US'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='mso-ansi-language:EN-US'>SemaphoreFIFO
+: First-in-First-Out-Warteschlange<o:p></o:p></span></p>
+
+<p class=MsoListBullet><![if !supportLists]><span lang=EN-US style='font-size:
+8.0pt;mso-bidi-font-size:10.0pt;mso-ansi-language:EN-US'>-<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span lang=EN-US style='mso-ansi-language:EN-US'>SemaphoreLIFO:
+Last-in-First-Out<o:p></o:p></span></p>
+
+<p class=MsoListBullet><![if !supportLists]><span style='font-size:8.0pt;
+mso-bidi-font-size:10.0pt'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>SemaphoreJAVA: Prioritätsgesteuert, wobei die internen
+Java-Thread-Prioritäten verwendet werden.</p>
+
+<p class=MsoListBullet><![if !supportLists]><span style='font-size:8.0pt;
+mso-bidi-font-size:10.0pt'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>SemaphoreRAND: Prioritätsgesteuert, mit zufälligen
+Prioritäten </p>
+
+<p class=MsoBodyText><span style="mso-spacerun: yes"> </span></p>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:"Times New Roman";
+mso-fareast-font-family:"Times New Roman";letter-spacing:-.2pt;mso-font-kerning:
+14.0pt;mso-ansi-language:DE;mso-fareast-language:DE;mso-bidi-language:AR-SA'><br
+clear=all style='page-break-before:always'>
+</span></i></b>
+
+<h3><a name="_Toc496552746">InteraktiveSemaphore</a></h3>
+
+<p class=MsoBodyText><!--[if gte vml 1]><o:wrapblock><v:shape id="_x0000_s1079"
+  type="#_x0000_t75" style='position:absolute;left:0;text-align:left;
+  margin-left:56.15pt;margin-top:0;width:117.75pt;height:149.25pt;z-index:15'
+  o:allowincell="f">
+  <v:imagedata src="./Dokumfinal-Dateien/image020.png" o:title=""/>
+  <v:textbox style='mso-next-textbox:#_x0000_s1079'/>
+  <w:wrap type="topAndBottom"/>
+ </v:shape><![if gte mso 9]><o:OLEObject Type="Embed" ProgID="PBrush"
+  ShapeID="_x0000_s1079" DrawAspect="Content" ObjectID="_1033463099">
+ </o:OLEObject>
+ <![endif]><![endif]--><![if !vml]><span style='mso-ignore:vglayout'>
+ <table cellpadding=0 cellspacing=0 align=left>
+  <tr>
+   <td width=75 height=0></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><img width=157 height=199 src="./Dokumfinal-Dateien/image021.jpg"
+   v:shapes="_x0000_s1079"></td>
+  </tr>
+ </table>
+ </span><![endif]><!--[if gte vml 1]></o:wrapblock><![endif]--><br
+style='mso-ignore:vglayout' clear=ALL>
+<![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<br style='mso-ignore:vglayout' clear=ALL>
+
+<p class=MsoBodyText>Diese Klasse erweitert die Semaphore um Buttons, die
+ermöglichen, den Zählerwert der Semaphore zur Laufzeit zu erhöhen bzw. zu
+vermindern, soweit dies möglich ist.</p>
+
+<p class=MsoBodyText>Die Aufrufschnittstelle ist identisch zu <b
+style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'>Semaphore</i></b>.</p>
+
+<h3><a name="_Toc496552747">InteraktiveSemaphoreFIFO, InteraktiveSemaphoreLIFO,
+InteraktiveSemaphoreJAVA, InteraktiveSemaphoreRAND</a></h3>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText>Interfaceklassen zu InteraktiveSemaphore. <span lang=FR
+style='mso-ansi-language:FR'>Analog zu SemaphoreFIFO, etc.<o:p></o:p></span></p>
+
+<h3><a name="_Toc496552748"><span lang=FR style='mso-ansi-language:FR'>PriorityQ</span></a><span
+lang=FR style='mso-ansi-language:FR'><o:p></o:p></span></h3>
+
+<p class=MsoBodyText><span lang=FR style='mso-ansi-language:FR'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoBodyText>Allgemeine Prioritätswarteschlange für Java-Objekte. </p>
+
+<p class=MsoBodyText>Für nähere Informationen siehe die technische
+Dokumentation.</p>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h3><a name="_Toc496552749">QPolicy, QPolicyFIFO, QPolicyLIFO, QPolicyJAVA,
+QPolicyRAND</a></h3>
+
+<h3><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></h3>
+
+<p class=MsoBodyText>Objekte zur Realisierung der entsprechenden Warteschlange
+mit Hilfe der (viel allgemeineren) <b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'>PriorityQ</i></b>. Nähere Information findet
+sich im Programmcode von <b style='mso-bidi-font-weight:normal'><i
+style='mso-bidi-font-style:normal'>Semaphore</i></b>.</p>
+
+<p class=MsoBodyText><span style="mso-spacerun: yes">   </span></p>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<b style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
+style='font-size:14.0pt;mso-bidi-font-size:10.0pt;font-family:"Times New Roman";
+mso-fareast-font-family:"Times New Roman";letter-spacing:-.2pt;mso-font-kerning:
+14.0pt;mso-ansi-language:DE;mso-fareast-language:DE;mso-bidi-language:AR-SA'><br
+clear=all style='page-break-before:always'>
+</span></i></b>
+
+<h3><!--[if gte vml 1]><o:wrapblock><v:shape id="_x0000_s1043" type="#_x0000_t75"
+  style='position:absolute;left:0;text-align:left;margin-left:58.7pt;
+  margin-top:0;width:79.5pt;height:67.5pt;z-index:6' o:allowincell="f">
+  <v:imagedata src="./Dokumfinal-Dateien/image022.png" o:title=""/>
+  <v:textbox style='mso-next-textbox:#_x0000_s1043'/>
+  <w:wrap type="topAndBottom"/>
+ </v:shape><![if gte mso 9]><o:OLEObject Type="Embed" ProgID="PBrush"
+  ShapeID="_x0000_s1043" DrawAspect="Content" ObjectID="_1033463100">
+ </o:OLEObject>
+ <![endif]><![endif]--><![if !vml]><span style='mso-ignore:vglayout'>
+ <table cellpadding=0 cellspacing=0>
+  <tr>
+   <td width=78 height=0></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><img width=106 height=90 src="./Dokumfinal-Dateien/image023.jpg" v:shapes="_x0000_s1043"></td>
+  </tr>
+ </table>
+ </span><![endif]><!--[if gte vml 1]></o:wrapblock><![endif]--><br
+style='mso-ignore:vglayout' clear=ALL>
+<a name="_Toc496552750">Signal</a></h3>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<br style='mso-ignore:vglayout' clear=ALL>
+
+<p class=MsoBodyText style='margin-left:18.6pt;text-indent:35.4pt'>Das Signal
+besteht aus einem Feld, dessen Farbe geändert werden kann.</p>
+
+<p class=MsoBodyText>Die Aufrufschnittstelle :</p>
+
+<p class=MsoBodyText style='mso-list:none;mso-list-change:\F0B7 "Kostenlose Demoversion" 20000923T2342'>Konstruktoren:
+(Defaultfarbe : weiß, Defaultname: „Signal“ und laufende Nummer)<span
+style='mso-tab-count:1'> </span> <span style='mso-tab-count:1'>           </span>Farbe
+ist vom Typ java.awt.Color</p>
+
+<p class=MsoBodyText style='mso-list:none;mso-list-change:\F0B7 "Kostenlose Demoversion" 20000923T2342'><span
+style='mso-tab-count:1'>      </span><span lang=EN-US style='mso-ansi-language:
+EN-US'>Signal(),Signal(Farbe),Signal(Name),Signal(Name,Farbe)<span
+style="mso-spacerun: yes">  </span><o:p></o:p></span></p>
+
+<p class=MsoBodyText style='mso-list:none;mso-list-change:\F0B7 "Kostenlose Demoversion" 20000923T2342'><span
+lang=EN-US style='mso-ansi-language:EN-US'><span style="mso-spacerun: yes"> 
+</span><span style='mso-tab-count:1'>    </span>Aufrufe:
+setcolor(java.awt.Color), setcolor(String) <o:p></o:p></span></p>
+
+<p class=MsoBodyText>String<span style="mso-spacerun: yes">  </span>kann einen
+der Werte „grün“, „rot“, „orange“, „blau“, „magenta“, „grau“, „schwarz“ oder
+„weiss“ annehmen.</p>
+
+<p class=MsoBodyText><span style="mso-spacerun: yes">  </span></p>
+
+<h3><a name="_Toc496552751">Ganzzahl</a></h3>
+
+<p class=MsoBodyText style='mso-list:none;mso-list-ins:"Kostenlose Demoversion" 20000924T0006'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText><!--[if gte vml 1]><v:shape id="_x0000_i1033" type="#_x0000_t75"
+ style='width:86.25pt;height:81pt' fillcolor="window">
+ <v:imagedata src="./Dokumfinal-Dateien/image024.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=115 height=108
+src="./Dokumfinal-Dateien/image025.gif" v:shapes="_x0000_i1033"><![endif]></p>
+
+<p class=MsoBodyText style='mso-list:none;mso-list-ins:"Kostenlose Demoversion" 20000924T0006'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText>Die Klasse Ganzzahl stellt eine einfache visuelle Variable
+dar, die den Wert eines Integers im Visualisierungsfenster sichtbar macht. Der
+Wert der Ganzzahlvariablen kann vom Programm ausgelesen und verändert werden.</p>
+
+<p class=MsoBodyText>Das Auslesen des Wertes geschieht mit der Methode <b
+style='mso-bidi-font-weight:normal'>wert(???)</b>, mittels <b style='mso-bidi-font-weight:
+normal'>setzeWert()</b> kann die Variable auf einen beliebigen Integer-Wert
+gesetzt werde. Die Methoden <b style='mso-bidi-font-weight:normal'>inkWert()</b>
+und <b style='mso-bidi-font-weight:normal'>dekWert()</b> ermöglichen ein
+schnelles erhöhen bzw. erniedrigen des Wertes um 1. Beide letztgenannte
+Methoden liefern dabei den neuen Wert der Ganzzahl mit.</p>
+
+<div style='border:solid windowtext .5pt;padding:1.0pt 4.0pt 1.0pt 4.0pt'>
+
+<p class=MsoBodyText style='border:none;mso-border-alt:solid windowtext .5pt;
+padding:0in;mso-padding-alt:1.0pt 4.0pt 1.0pt 4.0pt'><span style='font-size:
+8.0pt;mso-bidi-font-size:10.0pt'>Der Zahlenbereich, der mittels der
+Ganzzahl-Klasse passabel dargestellt werden kann liegt zwischen –999.999 und
+9.999.999 (also ca. 7 Dezimalstellen). Betragsmäßig größere Werte werden zwar
+korrekt verarbeitet, ergeben aber Probleme bei der visuellen Darstellung.<o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h3><a name="_Toc496552752">Fliesskomma</a></h3>
+
+<p class=MsoBodyText style='mso-list:none;mso-list-ins:"Kostenlose Demoversion" 20000924T0008'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText><!--[if gte vml 1]><v:shape id="_x0000_i1034" type="#_x0000_t75"
+ style='width:86.25pt;height:79.5pt' fillcolor="window">
+ <v:imagedata src="./Dokumfinal-Dateien/image026.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=115 height=106
+src="./Dokumfinal-Dateien/image027.gif" v:shapes="_x0000_i1034"><![endif]></p>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText style='mso-list:none;mso-list-ins:"Kostenlose Demoversion" 20000924T0008'>Analog
+zur Klasse Ganzzahl ein einfacher Typ zum darstellen von Fließkommazahlen.</p>
+
+<p class=MsoBodyText>Im Gegensatz zur Klasse Ganzzahl entfallen jedoch die
+Methoden <span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>inkWert()</span>
+und <span style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>dekWert()</span>.</p>
+
+<p class=MsoBodyText>Aus Gründen der visuellen Darstellung sollten<span
+style="mso-spacerun: yes">  </span>ebenfalls nur Zahlen mit maximal sieben
+Dezimalen verwendet werden.</p>
+
+<h3><a name="_Toc496552753">Ringpuffer</a></h3>
+
+<p class=MsoBodyText style='mso-list:none;mso-list-ins:"Kostenlose Demoversion" 20000924T0008'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText><!--[if gte vml 1]><v:shape id="_x0000_i1035" type="#_x0000_t75"
+ style='width:222pt;height:87pt' fillcolor="window">
+ <v:imagedata src="./Dokumfinal-Dateien/image028.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=296 height=116
+src="./Dokumfinal-Dateien/image029.gif" v:shapes="_x0000_i1035"><![endif]></p>
+
+<p class=MsoBodyText style='mso-list:none;mso-list-ins:"Kostenlose Demoversion" 20000924T0008'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText>Ein typisches Konstrukt nebenläufiger Programmierung
+sind<span style="mso-spacerun: yes">  </span>Ringpuffer :<span
+style="mso-spacerun: yes">  </span>Speicherstrukturen, in die und aus denen
+Daten in FIFO-Weise geschrieben und ausgelesen werden können. Der Name
+„Ringpuffer“ rührt dabei vom zyklischen Umlauf der Schreib- bzw. Lesezeiger
+her. Wird beim Lesen oder Schreiben das Ende des Puffers erreicht, so wird am
+Anfang fortgefahren.</p>
+
+<p class=MsoBodyText>Die Visualisierung der Ringpufferklassen ermöglicht es dem
+Benutzer, den Belegungsstatus sowie die Positionen der Schreib- und Lesezeiger
+am Bildschirm mitzuverfolgen. Standardgemäß werden leere Felder grau, belegte
+rot dargestellt. Die Farbe von belegten Feldern kann individuell angepasst
+werden, um zwischen verschiedenen (z.B. von verschiedenen Prozessen stammenden)
+Elementen unterscheiden zu können</p>
+
+<p class=PersnlicheDaten style='margin-left:.75in;text-indent:0in;mso-list:
+none;tab-stops:35.4pt'>Das IPKSim-Paket stellt zwei Typen von Ringpuffern
+bereit:</p>
+
+<h4><a name="_Toc496552754">Der ungeschützte Ringpuffer</a></h4>
+
+<p class=MsoBodyText>Der erste, einfache, Ringpuffertyp, stellt sozusagen einen
+rohen Ringpuffer dar, der alle Elementarfunktionen zum Schreiben, Auslesen und
+Verändern der Positionszeiger bereitstellt. Die Schreib- und Leseoperationen
+sind dabei unkontrolliert auf jedem Feld des Ringpuffers möglich. Der
+Programmierer, der diese Ringpufferklasse verwendet, muss selbst über die
+Methoden <b style='mso-bidi-font-weight:normal'>istBelegt()</b> und <b
+style='mso-bidi-font-weight:normal'>istFrei()</b> feststellen, ob eine Lese-/
+Schreiboperation erlaubt und sinnvoll ist oder nicht. Auf diese Weise kann
+diese einfache Ringpufferklasse dazu benutzt werden um tatsächliche Probleme,
+die beim gemeinsamen Zugriff mehrerer Prozesse auf einen Ringpuffer entstehen
+zu veranschaulichen. Der Lesezeiger kann mit <b style='mso-bidi-font-weight:
+normal'>leseZeiger()</b> ausgelesen werden und mit <b style='mso-bidi-font-weight:
+normal'>inkLesezeiger()</b>, sowie <b style='mso-bidi-font-weight:normal'>setzteLesezeiger()</b>
+manipuliert werden.</p>
+
+<p class=MsoBodyText>Über die Methoden <b style='mso-bidi-font-weight:normal'>schreibe(...)</b>,
+<b style='mso-bidi-font-weight:normal'>lese(...)</b> und <b style='mso-bidi-font-weight:
+normal'>loesche(...)</b> kann auf die Elemente im Ringpuffer zugegriffen
+werden. Der Ringpuffer kann alle von <span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>Object</span> abgeleiteten Java-Objekte
+aufnehmen. Beim Schreiben kann optional noch eine Farbe vom Typ <span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>java.awt.Color</span>
+angegeben werden, mit der das jeweilige Ringpufferfeld auf dem Bildschirm
+angezeigt wird,<span style="mso-spacerun: yes">  </span>was besonders dann
+nützlich ist, wenn mehrere Prozesse den Ringpuffer beschreiben sollen, um sehen
+zu können, welcher Prozess welches Feld beschrieben hat. Alle drei
+Zugriffsmethoden können direkt mit einem Feldindex aufgerufen werden, um
+gezielt ein bestimmtes Feld anzusprechen. Es gibt jeweils auch eine Variante
+ohne Indexnummer, diese verwenden dann den Schreib- bzw. Lesezeiger zur
+Ermittlung der Position, die Zeiger werden jedoch nicht geändert.</p>
+
+<h4><a name="_Toc496552755">Der geschützte Ringpuffer</a></h4>
+
+<p class=MsoBodyText>Über den einfachen Ringpuffertyp hinaus gibt es einen
+weiteren, den geschützten Ringpuffer, der in der Klasse <b style='mso-bidi-font-weight:
+normal'>GeschuetzterRingpuffer</b> bereitgestellt wird. Dieser Ringpuffertyp
+stellt im Wesentlichen nur zwei Methoden bereit: <b style='mso-bidi-font-weight:
+normal'>rein()</b> zum Schreiben und <b style='mso-bidi-font-weight:normal'>raus()</b>
+zum zerstörenden Lesen. Der Lese- und der Schreibzeiger sind hier nicht
+manipulierbar, sondern werden nur von <span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>rein()</span> und <span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>raus()</span>
+weitergesetzt. Ist der Ringpuffer bereits voll, wird ein Schreibversuch mit <span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>rein()</span>
+ignoriert. Der Benutzer muß deswegen vor jedem <span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>rein()</span> Aufruf mittels der
+Methode <b style='mso-bidi-font-weight:normal'>istVoll()</b> prüfen, ob ein
+folgender Schreibzugriff Erfolg haben wird. Umgekehrt verhält es sich mit <span
+style='font-family:"Courier New";mso-bidi-font-family:"Times New Roman"'>raus()</span>
+und <b style='mso-bidi-font-weight:normal'>istLeer()</b> genauso. Ein
+Leseversuch aus einem leeren Ringpuffer liefert eine Nullreferenz zurück. Beim
+Schreiben mittels <span style='font-family:"Courier New";mso-bidi-font-family:
+"Times New Roman"'>rein()</span> hat der Programmierer auch hier die
+Möglichkeit mittels eines zusätzlichen Parameters die Farbe für das Feld zu
+bestimmen.</p>
+
+<span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"Times New Roman";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:DE;mso-fareast-language:
+DE;mso-bidi-language:AR-SA'><br clear=all style='mso-special-character:line-break;
+page-break-before:always'>
+</span>
+
+<p class=MsoListBullet style='margin-left:17.4pt;text-indent:0in'><![if !supportLists]><span
+style='font-size:8.0pt;mso-bidi-font-size:10.0pt'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h1><sup><span style='mso-text-raise:0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></sup></h1>
+
+<h1><!--[if gte vml 1]><v:rect id="_x0000_s1064" style='position:absolute;
+ left:0;text-align:left;margin-left:180pt;margin-top:64.8pt;width:8.4pt;
+ height:63pt;z-index:-4;mso-position-horizontal-relative:page;
+ mso-position-vertical-relative:page' o:allowincell="f" filled="f" stroked="f"
+ strokecolor="white" strokeweight="6pt">
+ <v:textbox style='mso-next-textbox:#_x0000_s1064' inset="0,0,0,0"/>
+ <w:wrap anchorx="page" anchory="page"/>
+ <w:anchorlock/>
+</v:rect><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:-4;left:0px;margin-left:240px;margin-top:86px;width:14px;
+height:86px'>
+
+<table cellpadding=0 cellspacing=0>
+ <tr>
+  <td width=14 height=86 align=left valign=top style='vertical-align:top'><![endif]><![if !mso]><span
+  style='position:absolute;left:0pt;z-index:-4'>
+  <table cellpadding=0 cellspacing=0 width="100%">
+   <tr>
+    <td><![endif]>
+    <div v:shape="_x0000_s1064" style='padding:0pt 0pt 0pt 0pt' class=shape>
+    <p class=MsoNormal style='margin-left:.1pt;line-height:6.25pt;mso-line-height-rule:
+    exactly'><span style='font-size:20.0pt;mso-bidi-font-size:10.0pt'>.<br>
+    .<br>
+    .<br>
+    .<br>
+    .<br>
+    .<br>
+    ..<br>
+    .<br>
+    .<o:p></o:p></span></p>
+    <p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+    </div>
+    <![if !mso]></td>
+   </tr>
+  </table>
+  </span><![endif]><![if !mso & !vml]>&nbsp;<![endif]><![if !vml]></td>
+ </tr>
+</table>
+
+</span><![endif]><a name="_Toc496552756"></a><!--[if gte vml 1]><v:rect id="_x0000_s1063"
+ style='position:absolute;left:0;text-align:left;margin-left:445.05pt;
+ margin-top:144.2pt;width:108pt;height:6pt;z-index:-5;
+ mso-position-horizontal-relative:page;mso-position-vertical-relative:page'
+ o:allowincell="f" fillcolor="#e5e5e5" strokecolor="white" strokeweight="2.5pt">
+ <w:wrap anchorx="page" anchory="page"/>
+ <w:anchorlock/>
+</v:rect><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:-5;left:0px;margin-left:592px;margin-top:191px;width:147px;
+height:11px'><img width=147 height=11 src="./Dokumfinal-Dateien/image030.gif"
+v:shapes="_x0000_s1063"></span><![endif]><span style='mso-bookmark:_Toc496552756'><sup><span
+style='mso-text-raise:0pt'>Beispiele</span></sup></span><sup><span
+style='mso-text-raise:0pt'><o:p></o:p></span></sup></h1>
+
+<h2><a name="_Toc496552757">Die speisenden Philosophen („DiningPhilosophers“)</a></h2>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText><!--[if gte vml 1]><v:shape id="_x0000_i1036" type="#_x0000_t75"
+ style='width:338.25pt;height:277.5pt' o:ole="" fillcolor="window">
+ <v:imagedata src="./Dokumfinal-Dateien/image006.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=451 height=370
+src="./Dokumfinal-Dateien/image031.jpg" v:shapes="_x0000_i1036"><![endif]><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="CorelPhotoPaint.Image.7"
+  ShapeID="_x0000_i1036" DrawAspect="Content" ObjectID="_1033463104">
+ </o:OLEObject>
+</xml><![endif]--></p>
+
+<p class=MsoBodyText>Das Beispielanwendung „DiningPhilosophers“ illustriert das
+bekannte Problem der speisenden Philosophen. Eine Zahl von Philosophen sitzt um
+einen runden Tisch herum. Jeder Philosoph möchte abwechselnd essen und denken.
+Zum Essen braucht er allerdings zwei Gabeln und da zwischen zwei Philosophen
+immer nur eine Gabel liegt, können zwei benachbarte Philosophen nie
+gleichzeitig essen.</p>
+
+<p class=MsoBodyText>Der Philosoph ist von <i style='mso-bidi-font-style:normal'>Prozess
+</i>abgeleitet. Ihm wird eine „linke“ und eine „rechte“ Semaphore übergeben,
+respektive Gabel.</p>
+
+<p class=MsoBodyText>Das ausführbare Hauptprogramm ist von <i style='mso-bidi-font-style:
+normal'>Anwendung</i><span style="mso-spacerun: yes">  </span>abgeleitet. </p>
+
+<p class=MsoBodyText><i style='mso-bidi-font-style:normal'>Testen Sie, was
+passiert, wenn z.B.:<o:p></o:p></i></p>
+
+<p class=MsoBodyText style='margin-left:88.5pt;text-indent:-.25in;mso-list:
+l5 level1 lfo17;mso-list-change:\F0B7 "Kostenlose Demoversion" 20000923T2342;
+tab-stops:list 88.5pt'><![if !supportLists]><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><i style='mso-bidi-font-style:normal'>die Anzahl der
+Philosophen erhöht wird.<o:p></o:p></i></p>
+
+<p class=MsoBodyText style='margin-left:88.5pt;text-indent:-.25in;mso-list:
+l5 level1 lfo17;mso-list-change:\F0B7 "Kostenlose Demoversion" 20000923T2342;
+tab-stops:list 88.5pt'><![if !supportLists]><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><i style='mso-bidi-font-style:normal'>die
+Philosophen-Prozesse unterschiedlich schnell laufen.<o:p></o:p></i></p>
+
+<p class=MsoBodyText style='margin-left:88.5pt;text-indent:-.25in;mso-list:
+l5 level1 lfo17;mso-list-change:\F0B7 "Kostenlose Demoversion" 20000923T2342;
+tab-stops:list 88.5pt'><![if !supportLists]><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><i style='mso-bidi-font-style:normal'>die Philosophen
+linke und rechte Gabel nicht in einer festen Reihenfolge aufnehmen (dazu müssen
+Sie nur im Code von Philosoph.essen() eine vorgesehene Änderung durchführen)<o:p></o:p></i></p>
+
+<p class=MsoBodyText><span style="mso-spacerun: yes"> </span></p>
+
+<h2><a name="_Toc496552758">Lost Update</a></h2>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText><!--[if gte vml 1]><v:shape id="_x0000_i1037" type="#_x0000_t75"
+ style='width:319.5pt;height:3in' fillcolor="window">
+ <v:imagedata src="./Dokumfinal-Dateien/image032.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=426 height=288
+src="./Dokumfinal-Dateien/image033.jpg" v:shapes="_x0000_i1037"><![endif]></p>
+
+<p class=MsoBodyText>Ein besonders im Zusammenhang mit Datenbanken geläufiges
+Problem ist das des „Lost update“, bzw. „Non-repeatable read“.</p>
+
+<p class=MsoBodyText>Zwei Prozesse versuchen gleichzeitig auf die gleiche
+Variable zuzugreifen, um z.B. deren Wert zu inkrementieren. Dazu wird jeweils
+von beiden Prozessen zunächst der alte Wert der Variable gelesen, dann
+verarbeitet (was dieses Beispiel durch einen warten() Aufruf simuliert) und
+schließlich wieder zurückgeschrieben. Wegen der Nebenläufigkeit beider Prozesse
+kann es passieren, dass Prozeß A während des Verarbeitens von Prozeß B
+verdrängt wird, B die Variable liest und während des Verarbeitens selbst wieder
+von A verdrängt wird, der seinen erhöhten Wert dann speichert. Nachdem auch B
+mit seinen Berechnungen fertig ist, schreibt dieser ebenfalls seinen erhöhten
+Wert in die Variable. Aus Sicht von A geht die Veränderung verloren, deshalb
+„Lost Update“. Für B verändert sich der Variablenwert quasi von selbst und ist
+– mindestens unmittelbar vor dem Zurückschreiben - nicht mehr wiederlesbar,
+daher „Non-repeatable read“.<span style="mso-spacerun: yes">   </span></p>
+
+<p class=MsoBodyText>Diesen Effekt kann man im vorliegenden Beispielprogramm
+dadurch beobachten, dass sich der Wert der Variable von Zeit zu Zeit nach unten
+verändert, was er eigentlich nicht dürfte, da beide Prozesse die Variable
+stetig erhöhen. Prozeß 1 um den Wert 5, Prozeß 2 um den Wert 10. Der zu
+beobachtende Effekt tritt dann auf, wenn Prozeß 1 wie oben beschrieben das
+schon abgelegte Ergebnis von Prozeß 2 überschreibt.</p>
+
+<p class=MsoBodyText>Tips:</p>
+
+<p class=MsoBodyText style='margin-left:1.25in;text-indent:-.25in;mso-list:
+l4 level1 lfo16;mso-list-change:\F0B7 "Kostenlose Demoversion" 20000923T2342;
+tab-stops:list 1.25in'><![if !supportLists]><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><i style='mso-bidi-font-style:normal'>Manchmal kann es
+vorkommen, dass beide Prozesse so synchron laufen, dass der beschriebene Effekt
+nicht eintritt. Dann hilft es, einen der beiden Prozesse kurzzeitig über seien
+„Anhalten“- Button anzuhalten, um dieses Zusammenspiel aus dem Tritt zu
+bringen.<o:p></o:p></i></p>
+
+<p class=MsoBodyText style='margin-left:1.25in;text-indent:-1.25in;mso-text-indent-alt:
+-.25in;mso-list:l4 level1 lfo16;mso-list-change:\F0B7 "Kostenlose Demoversion" 20000923T2342;
+tab-stops:list 1.25in'><![if !supportLists]><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><i style='mso-bidi-font-style:normal'>Der Effekt lässt
+sich am besten beobachten, wenn beide Prozesse möglichst langsam ablaufen. Dazu
+den Wartezeitmultiplikatorschieber in Richtung 200% schieben.<o:p></o:p></i></p>
+
+<h2><a name="_Toc496552759">Consumer Producer</a></h2>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText><!--[if gte vml 1]><v:shape id="_x0000_i1038" type="#_x0000_t75"
+ style='width:382.5pt;height:244.5pt' fillcolor="window">
+ <v:imagedata src="./Dokumfinal-Dateien/image034.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=510 height=326
+src="./Dokumfinal-Dateien/image035.jpg" v:shapes="_x0000_i1038"><![endif]></p>
+
+<p class=MsoBodyText>Dieses Beispiel veranschaulicht, wie ein Prozeßpaar Daten
+über einen geschützten Ringpuffer (Klasse <span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>GeschuetzterRingpuffer</span>)
+austauscht. Der etwas schneller laufende Erzeugerprozess erzeugt laufend neue
+Daten und speichert sie mit der <span style='font-family:"Courier New";
+mso-bidi-font-family:"Times New Roman"'>rein()-</span>Methode im Ringpuffer (im
+Beispiel handelt es sich konkret um Character-Objekte, der Ringpuffer kann
+jedoch alle von Object abgeleiteten Klassen aufnehmen). Der Verbraucherprozeß
+liest mittels der raus()-Methode diese Daten wieder aus (das „älteste“ Objekt
+zuerst).<span style="mso-spacerun: yes">  </span>Wartet man eine Weile, so
+füllt sich der Ringpuffer immer mehr, bis er schließlich den Zustand „voll“
+erreicht. In diesem Zustand wartet der Erzeugerprozeß jeweils darauf, bis der
+Verbraucher wieder einen Ringpufferplatz freimacht und belegt ihn sogleich.</p>
+
+<p class=MsoBodyText>Dieses Beispiel zeigt weniger ein IPKS-Problem auf, als
+vielmehr ein Beispiel zur Verdeutlichung der Arbeitsweise eines Ringpuffers.
+Zur Veranschaulichung der Probleme, die die Synchronsierung von
+Ringpufferzugriffen mit sich bringt ist das folgende Beispiel gedacht.</p>
+
+<span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"Times New Roman";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:DE;mso-fareast-language:
+DE;mso-bidi-language:AR-SA'><br clear=all style='mso-special-character:line-break;
+page-break-before:always'>
+</span>
+
+<p class=MsoBodyText style='margin-left:0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h2><a name="_Toc496552760">ConsumerProducerSem</a></h2>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText><b style='mso-bidi-font-weight:normal'><!--[if gte vml 1]><v:shape
+ id="_x0000_i1039" type="#_x0000_t75" style='width:374.25pt;height:267.75pt'>
+ <v:imagedata src="./Dokumfinal-Dateien/image036.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=499 height=357
+src="./Dokumfinal-Dateien/image037.jpg" v:shapes="_x0000_i1039"><![endif]></b></p>
+
+<p class=MsoBodyText>Dieses Beispiel veranschaulicht die eigentlichen
+IPKS-Probleme und ihre Behebung mit Hilfe von Semaphoren beim gleichzeitigen
+Zugriff auf einen Ringpuffer. Im Gegensatz zum vorherigen Beispiel wird hier
+ein ungeschützter Ringpuffer (Klasse Ringpuffer) verwendet, d.h. der
+Programmcode der Prozesse kümmert sich selbst um die Elementaroperationen, die
+zum Zugriff auf den Ringpuffer nötig sind, d.h. Erhöhen des
+Schreib-/Lesezeigers, Schreiben/Lesen und die Synchronisation über Semaphoren.</p>
+
+<p class=MsoBodyText>Zur Steuerung werden zwei Semaphoren verwendet. Das
+Semaphor mit dem Namen „frei“ wird zum Programmstart mit der Anzahl der
+Ringpufferelemente initialisiert und vor jedem Schreibversuch „betreten“
+(p()-Aufruf), sowie nach erfolgreichen Lesen wieder „verlassen“ (v()-Aufruf).
+Der Wert des Semaphors spiegelt also stets die Anzahl der freien Feldelemente
+wieder. Hat es den Wert 0 erreicht, kann kein weiterer Prozeß das Semaphor mehr
+betreten, sondern wird beim Betretungsversuch blockiert und auf die Warteliste
+des Semaphors gesetzt. Das Semaphor mit dem Namen „belegt“ hat zu Anfang den
+Wert 0, wird vor jedem Leseversuch betreten und nach erfolgreichem Schreiben
+verlassen, sein Wert spiegelt die Anzahl der belegten Felder wieder. </p>
+
+<p class=MsoBodyText>Am Bildschirm werden die auf ein Semaphor wartenden
+Prozesse im unteren Bereich des Semaphors der Reihe nach aufgelistet. Man kann
+also Beobachten, daß sich der Erzeugerprozeß immer wieder in dieser Warteliste
+findet, wenn der Ringpuffer vollgelaufen ist. Umgekehrt wartet der
+Verbraucherprozeß in der Warteliste des „belegt“- Semaphors falls der
+Ringpuffer gerade leer ist. Man kann beide Situationen sehr gut dadurch
+erzwingen, in dem man einen der Prozesse für eine zeitlang anhält.</p>
+
+<span style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"Times New Roman";
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:DE;mso-fareast-language:
+DE;mso-bidi-language:AR-SA'><br clear=all style='mso-special-character:line-break;
+page-break-before:always'>
+</span>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h2><a name="_Toc496552761">OneConsumerTwoProducer</a></h2>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText><!--[if gte vml 1]><v:shape id="_x0000_i1040" type="#_x0000_t75"
+ style='width:383.25pt;height:273.75pt'>
+ <v:imagedata src="./Dokumfinal-Dateien/image038.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=511 height=365
+src="./Dokumfinal-Dateien/image039.jpg" v:shapes="_x0000_i1040"><![endif]></p>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText>Dies ist eine weitere Variante des in den beiden
+vorhergehenden Beispielen bereits beschriebenen Erzeuger-Verbraucher-Problems.
+Hier erzeugen jedoch gleich 2 Prozesse laufend Daten, die in den Ringpuffer
+geschrieben werden. Zur Unterscheidung, welcher Prozeß welche Daten geschrieben
+hat, verwenden die Prozesse hier die Schreibfunktionen des Ringpuffers die die
+zusätzliche Vergabe einer Farbe beim Einfügen eines Objekts unterstützen. Man
+kann interessante Effekte beobachten, wenn man die Wartezeitmultiplikatoren der
+Prozesse verändert. Sehr schön kann man auch beobachten, daß zwei Prozesse auf
+die Freigabe eines Semaphors warten, wenn man den Verbraucherprozeß eine
+zeitlang anhält. Nach Reaktivierung des Verbrauchers darf derjenige Prozeß
+zuerst schreiben, der in der Warteliste des Semaphors an erster Stelle stand.
+Sehr interessant ist auch der Effekt, der eintritt, wenn man den ersten Prozeß
+in der Warteliste anhält, während noch ein zweiter Prozess wartet, und den
+Verbraucher anschließend fortsetzt; der zweite Prozess wird blockiert, bis der
+erste wieder reaktiviert wird.</p>
+
+<h2><a name="_Toc496552762">ConsumerProducerStd</a></h2>
+
+<p class=MsoBodyText>(da dieses Beispiel mehrere Klassen umfaßt, sind die
+dazugehörigen Klassen im Paket de.ipksim.beispiele.ErzeugerVerbraucher
+gesammelt)</p>
+
+<p class=MsoBodyText>Dieses Beispiel entspricht dem obigen OneConsumerTwoProducer
+bis auf die unterschiedliche Implementierungsweise. Es ist nämlich nicht mit
+Hilfe von anonymen Prozessklassen, die in der init()- Methode definiert werden,
+realisiert, sondern verwendet für die Prozesse eigene, benannte Java- Klassen,
+die in der init()- Methode lediglich noch parametrisiert und instanziiert
+werden.</p>
+
+<p class=MsoBodyText>Damit die Prozeßklassen auf die gemeinsam genutzten
+Objekte (Ringpuffer und Semaphore) zugreifen können, ist ein kleiner Umweg
+nötig. Die Objekte werden nicht lokal innerhalb der init()-Methode deklariert,
+sondern als Klassenvariablen der Anwendungsklasse. Eine Referenz auf die
+aktuelle Instanz der Anwendungsklasse läßt sich über die statische Variable
+Anwendung.anwendung holen; diese Referenz muß dann allerdings noch auf den Typ
+der speziellen Anwendung gecasted werden, um darüber Zugriff auf die in ihr
+enthaltenen Membervariablen zu bekommen (Polymorphismus !). Damit dieses
+Casting nicht bei jedem Zugriff auf ein geteiltes Objekt explizit geschehen
+muß, haben die hier verwendeten Prozeßklassen eine Membervariable namens
+„daten“, die vom Konstruktor mit dem Wert von Anwendung.anwendung initialisiert
+wird.</p>
+
+<p class=MsoBodyText>Das beschriebene Vorgehen mag zwar etwas umständlich
+erscheinen, der Vorteil liegt aber gerade in diesem Beispiel auf der Hand. Während
+in OneConsumerTwoProducer drei verschiedene Klassen (wenn auch anonym)
+definiert werden mußten, kommt diese Variante mit lediglich zwei Klassen aus,
+da die beiden Erzeugerobjekte mit einem Typ dargestellt werden können. Auch
+einen weiteren Pluspunkt gibt es noch: Im Gegensatz zur Version mit den
+anonymen Klassen können hier in der Funktion schleife() Breakpoints mit Hilfe
+des VisualAge-Debuggers gesetzt werden.</p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<span style='font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"Times New Roman";mso-ansi-language:DE;mso-fareast-language:DE;mso-bidi-language:
+AR-SA'><br clear=all style='mso-special-character:line-break;page-break-before:
+always'>
+</span>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<h2><a name="_Toc496552763">Resources</a></h2>
+
+<p class=MsoBodyText><!--[if gte vml 1]><o:wrapblock><v:shape id="_x0000_s1074"
+  type="#_x0000_t75" style='position:absolute;left:0;text-align:left;
+  margin-left:50.15pt;margin-top:0;width:149.75pt;height:187.2pt;z-index:14'>
+  <v:imagedata src="./Dokumfinal-Dateien/image040.png" o:title=""/>
+  <w:wrap type="topAndBottom"/>
+ </v:shape><v:shape id="_x0000_s1080" type="#_x0000_t75" style='position:absolute;
+  left:0;text-align:left;margin-left:167.15pt;margin-top:0;width:281.9pt;
+  height:210.8pt;z-index:16'>
+  <v:imagedata src="./Dokumfinal-Dateien/image041.png" o:title=""/>
+  <w:wrap type="topAndBottom"/>
+ </v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'>
+ <table cellpadding=0 cellspacing=0 align=left>
+  <tr>
+   <td width=67 height=0></td>
+  </tr>
+  <tr>
+   <td></td>
+   <td><img width=532 height=281 src="./Dokumfinal-Dateien/image042.gif"
+   v:shapes="_x0000_s1074 _x0000_s1080"></td>
+  </tr>
+ </table>
+ </span><![endif]><!--[if gte vml 1]></o:wrapblock><![endif]--><br
+style='mso-ignore:vglayout' clear=ALL>
+<![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<br style='mso-ignore:vglayout' clear=ALL>
+
+<p class=MsoBodyText>Hier<span style="mso-spacerun: yes">  </span>konkurrieren
+Prozesse um Resourcen – durch Semaphore dargestellt.</p>
+
+<p class=MsoBodyText>Die Anzahl von Prozessen und Semaphoren, sowie weitere
+Parameter sind am Programmstart graphisch einstellbar:</p>
+
+<p class=MsoBodyText>Warteschlangenstrategie</p>
+
+<p class=MsoBodyText>Resourcenkapazität: Der Initialwert der Semaphoren.</p>
+
+<p class=MsoBodyText>Fairness:<span style="mso-spacerun: yes"> 
+</span>Resourcenkapazität/Fairness =<span style="mso-spacerun: yes"> 
+</span>maximale Anforderung ( max(i) für p(i)) durch die Prozesse.</p>
+
+<p class=MsoBodyText>Art der Belegung: </p>
+
+<p class=MsoBodyText><span style='mso-tab-count:1'>      </span>Seriell: Die
+Semaphoren werden hintereinander belegt und wieder freigegeben (
+a.p(i),a.v(i),b.p(j),b.v(j),c.p(k),c.v(k), usw.)</p>
+
+<p class=MsoBodyText style='text-indent:16.8pt'>Geschachtelt: Geschachtelte
+Belegung und Freigabe (a.p(i),b.p(j),c.p(k),...,c.v(k), c.v(j), c.v(i)) </p>
+
+<p class=MsoBodyText style='text-indent:16.8pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>

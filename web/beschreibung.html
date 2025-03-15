@@ -1,0 +1,64 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Norbert Gewald">
+   <meta name="Classification" content="IPKSim home">
+   <meta name="Description" content="created 2000-06-09">
+   <meta name="KeyWords" content="IPKSim home">
+   <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+   <title>ipksim.de - BESCHREIBUNG</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#C0C0C0" vlink="#999999" alink="#FF0000">
+
+<h1><font face="Arial"><b>Das <font color="#00FF00">I</font><font color="#FF0000">P</font><font color="#FFCC00">K</font><i><font color="#0000FF">S</font>im</i>-Paket</b></font></h1>
+<span style="mso-ignore: vglayout; position: absolute; z-index: -2; left: 179; width: 125; height: 29; top: 629; margin-left: 192px; margin-top: 38px"></span>
+<p><!--[if gte vml 1]><v:rect id="_x0000_s1026" style='position:absolute;
+ left:0;text-align:left;margin-left:413.85pt;margin-top:85.2pt;width:108pt;
+ height:6pt;z-index:-2;mso-position-horizontal-relative:page;
+ mso-position-vertical-relative:page' o:allowincell="f" fillcolor="#e5e5e5"
+ strokecolor="white" strokeweight="2.5pt">
+ <w:wrap anchorx="page" anchory="page"/>
+ <w:anchorlock/>
+</v:rect><![endif]-->
+<font face="Arial">Probleme und Mechanismen der Kommunikation und
+Synchronisation von nebenläufigen Prozessen stellen einen wesentlichen Aspekt
+in jeder Hochschulvorlesung zum Thema Betriebssysteme dar. Auch anderswo hat das
+Thema Gewicht: In der „gewöhnlichen“ Anwendungsentwicklung wird immer öfter
+nebenläufig programmiert. Das Thema „Semaphore &amp; Co.“ füllt
+wesentlichen Raum der Informatik und betrifft jeden Informatiker. Leider ist es
+jedoch<span style="mso-spacerun: yes">&nbsp; </span>nicht das anschaulichste
+Gebiet der Disziplin. Fast immer können die Abläufe nur durch Erfindung
+hypothetischer Hintergrundbedingungen und<span style="mso-spacerun: yes">&nbsp; </span>schrittweisem
+„Nach-denken“ einfacher Beispielprogramme durchschaut werden. Unmittelbar zu
+sehen, was passiert, ist unmöglich.</font></p>
+<p class="MsoBodyText"><font face="Arial">Dieses Manko zu beheben, ist Zweck der
+Java-Klassenbibliothek „IPKSim“. Sie unterstützt die Visualisierung von
+Mechanismen und<span style="mso-spacerun: yes">&nbsp; </span>Problemen der
+Interprozess- (bzw. Inter“thread“-) synchronisation und –kommunikation.</font></p>
+<p class="MsoBodyText"><font face="Arial">Die Bibliothek stellt Elemente zur
+Verfügung, wie Sie typischerweise in nebenläufigen Programmen benötigt werden,
+z.B. Semaphore. Die Elemente erfüllen die Funktionen, die man sich von ihnen
+erwartet und jedes Element kann jedoch dabei in einem Fenster beobachtet werden.
+Solche Elemente sind z.T. implizit, z.T. explizit veränderbar. Implizit veränderbar
+sind z.B. Semaphore, die über die üblichen Funktionen (bzw- Methoden, denn wir
+befinden uns in einer objektorientierten Welt) manipuliert werden. Zu beobachten
+sind dann der Zähler und evtl. die Prozesswarteschlange der Semaphore.
+Explizite Elemente sind solche, die ausdrücklich der Visualisierung dienen, und
+in der Programmlogik<span style="mso-spacerun: yes">&nbsp; </span>evtl. einen
+anderweitigen Aktor ersetzen. Ein solches ist z.B. das Element „Signal“.</font></p>
+<p class="MsoBodyText"><font face="Arial">Darüberhinaus stellt die Bibliothek
+einige makroskopische Programmobjekte zur Verfügung, die in entsprechenden
+Beispielprogrammen typischerweise auftauchen, z.B. einen visualisierten/
+beobachtbaren Ringpuffer sowie ein Framework für Programme, die die „IPKSim“
+benutzen. Letzteres zu verwenden, ist dem Benutzer natürlich freigestellt,
+allerdings ergeben sich bei Benutzung des Frameworks weitere komfortable
+Steuerungsmöglichkeiten.</font></p>
+<p class="MsoBodyText"><font face="Arial">Höhere Transparenz bei eigenen
+Programmen – wie auch bei den mitgelieferten Beispielen – ergibt sich, wenn
+die Programme in einem Debugger, evtl. sogar im Einzelschrittbetrieb, ausgeführt
+werden. Wie dies mit Hilfe der Entwicklungsumgebung „Visual Age for Java“
+von IBM geschehen kann,<span style="mso-spacerun: yes">&nbsp; </span>ist in
+einer gesonderten Anleitung erklärt, die im Paketumfang enthalten ist.</font></p>
+</body>
+</html>
